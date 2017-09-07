@@ -1,0 +1,55 @@
+PODS:
+  - AVSDK (1.9.2.17.28736)
+  - ILiveSDK (1.6.1.11681)
+  - IMSDK (2.5.6.11082.11081)
+  - JCore (1.1.5)
+  - JPush (3.0.6):
+    - JCore (~> 1.1.1)
+  - NWPusher (0.7.5)
+  - QAVEffect (1.0.0)
+  - TILCallSDK (1.0.14.11684)
+  - Utility (0.0.1):
+    - YYKit (~> 1.0.9)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AVSDK (from `./CallSDK/AVSDK/`)
+  - ILiveSDK (from `./CallSDK/ILiveSDK/`)
+  - IMSDK (from `./CallSDK/IMSDK/`)
+  - JPush (~> 3.0.6)
+  - NWPusher (~> 0.7.0)
+  - QAVEffect (from `./CallSDK/QAVEffect/`)
+  - TILCallSDK (from `./CallSDK/TILCallSDK/`)
+  - Utility (from `./Utility`)
+
+EXTERNAL SOURCES:
+  AVSDK:
+    :path: ./CallSDK/AVSDK/
+  ILiveSDK:
+    :path: ./CallSDK/ILiveSDK/
+  IMSDK:
+    :path: ./CallSDK/IMSDK/
+  QAVEffect:
+    :path: ./CallSDK/QAVEffect/
+  TILCallSDK:
+    :path: ./CallSDK/TILCallSDK/
+  Utility:
+    :path: ./Utility
+
+SPEC CHECKSUMS:
+  AVSDK: f6fafa87d08d4293be581c4186189f07023b8db8
+  ILiveSDK: 2786bb51fd50fb840fb3589816df5689040ba76c
+  IMSDK: b78c3e14eee4525fe05f6637a792e9d08c261990
+  JCore: 9bd9c770c877c583d98b90a68792b8361974c231
+  JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  NWPusher: 9b29a44754d88cb02c28a1e9bc8750845506123e
+  QAVEffect: 89b591bfbeb4a89065ed2358a0101801fbb5f2f5
+  TILCallSDK: 7f178bdce33e7afde00e2739beeebf87be45a7bc
+  Utility: cf2b570d9915127d4f19948f859fbcb89576ba31
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 3669be95edbe592c473b201b77892a795d057316
+
+COCOAPODS: 1.2.1
