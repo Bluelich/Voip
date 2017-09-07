@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.source       = { :git => "", :tag => "0.0.1" }
   spec.source_files = 'Sources/**/*.{h,m}'
-  spec.resources    = ['Sources/*.xib']
+  spec.resources    = ['Sources/**/*.xib']
   spec.frameworks   = "Security", 
 					  "Foundation",
 					  "UIKit",
