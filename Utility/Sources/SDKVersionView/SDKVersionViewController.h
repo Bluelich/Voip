@@ -1,9 +1,9 @@
 //
 //  SDKVersionViewController.h
-//  Voip
+//  Pods
 //
-//  Created by zhouqiang on 07/09/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Created by zhouqiang on 08/09/2017.
+//
 //
 
 #import <UIKit/UIKit.h>

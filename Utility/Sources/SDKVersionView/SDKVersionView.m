@@ -17,21 +17,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *callSDK_VersionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *qavSDK_VersionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *imSDK__VersionLabel;
+
 @end
 
 @implementation SDKVersionView
-
-+ (instancetype)loadViewFromNib
+- (id)awakeAfterUsingCoder:(NSCoder *)aDecoder
 {
-    SDKVersionView *view = [[NSBundle bundleForClass:self.class] loadNibNamed:@"SDKVersionView" owner:nil options:nil].lastObject;
-    NSAssert(view.class == SDKVersionView.class,@"the view which load from nib is not kind of SDKVersionView");
-    view.frame = CGRectZero;
-    return view;
-}
-- (void)setFrame:(CGRect)frame
-{
-    frame.size = CGSizeMake(300, 130);
-    [super setFrame:frame];
+    if (self.subviews.count == 0) {
+        UIView *view = [self.class instantiateRealViewFromPlaceholder:self];
+        return view;
+    }
+    return self;
 }
 - (void)setVersionInfo
 {
@@ -39,5 +35,60 @@
     self.qavSDK_VersionLabel.text  = [QAVContext getVersion];
     self.iLive_VersionLabel.text   = [[ILiveSDK getInstance] getVersion];
     self.imSDK__VersionLabel.text  = [[TIMManager sharedInstance] GetVersion];
+}
+#pragma mark - Views
++ (UIView *)instantiateRealViewFromPlaceholder:(UIView *)view
+{
+    UIView *realView = [[NSBundle bundleForClass:self] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+    realView.tag = view.tag;
+    realView.frame = view.frame;
+    realView.bounds = view.bounds;
+    realView.hidden = view.hidden;
+    realView.contentMode = view.contentMode;
+    realView.clipsToBounds = view.clipsToBounds;
+    realView.autoresizingMask = view.autoresizingMask;
+    realView.userInteractionEnabled = view.userInteractionEnabled;
+    realView.translatesAutoresizingMaskIntoConstraints = view.translatesAutoresizingMaskIntoConstraints;
+    if (view.constraints.count == 0) {
+        return realView;
+    }
+    // Copy autolayout constrains.
+    // Fix crash when using 2.3.1 in UICollectionViews or similar
+    dispatch_async(dispatch_get_main_queue(), ^{
+        (void)view;
+    });
+    // We only need to copy "self" constraints (like width/height constraints) from placeholder to real view
+    [view.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLayoutConstraint* newConstraint = nil;
+        if (obj.secondItem == nil) {
+            // Height | Width, first = self, second = nil
+            newConstraint = [NSLayoutConstraint constraintWithItem:realView attribute:obj.firstAttribute relatedBy:obj.relation toItem:nil attribute:obj.secondAttribute multiplier:obj.multiplier constant:obj.constant];
+        }else if ([obj.firstItem isEqual:obj.secondItem]){
+            // Aspect ratio, first = second  = self
+            newConstraint = [NSLayoutConstraint constraintWithItem:realView attribute:obj.firstAttribute relatedBy:obj.relation toItem:realView attribute:obj.secondAttribute multiplier:obj.multiplier constant:obj.constant];
+        }
+        if (newConstraint) {
+            // Copy properties to new constraint
+            newConstraint.shouldBeArchived = obj.shouldBeArchived;
+            newConstraint.priority = obj.priority;
+            if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f) {
+                newConstraint.identifier = obj.identifier;
+            }
+            [realView addConstraint:newConstraint];
+        }
+    }];
+    return realView;
+}
++ (UIView *)viewFromNib
+{
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass(self) bundle:nil];
+    NSArray *views = [nib instantiateWithOwner:nil options:nil];
+    for (UIView *view in views) {
+        if ([view isMemberOfClass:self.class]) {
+            return view;
+        }
+    }
+    NSAssert(NO, @"Expect file: %@", [NSString stringWithFormat:@"%@.xib", NSStringFromClass(self)]);
+    return nil;
 }
 @end

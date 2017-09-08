@@ -82,13 +82,15 @@
 - (void)updateWithTargetFrame:(CGRect)frame animated:(BOOL)animated
 {
     [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
-        self.frame = frame;
-//        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.size.equalTo(self.frame.size);
-//            make.leading.equalTo(CGRectGetMinX(frame));
-//            make.top.equalTo(CGRectGetMinY(frame));
-//        }];
-//        [self.superview layoutIfNeeded];
+        [self removeConstraint:self.constraints];
+        NSLayoutConstraint *leading =
+//        [self.leadingAnchor constraintEqualToAnchor:self.superview.leadingAnchor constant:CGRectGetMinX(frame)];
+        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeading multiplier:1.0 constant:CGRectGetMinX(frame)];
+        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:CGRectGetMinY(frame)];
+        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:CGRectGetWidth(frame)];
+        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:CGRectGetHeight(frame)];
+        [self addConstraints:@[leading,top,width,height]];
+        [self.superview layoutIfNeeded];
     }];
 }
 @end

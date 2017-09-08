@@ -1,9 +1,9 @@
 //
 //  SDKVersionViewController.m
-//  Voip
+//  Pods
 //
-//  Created by zhouqiang on 07/09/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Created by zhouqiang on 08/09/2017.
+//
 //
 
 #import "SDKVersionViewController.h"
@@ -11,16 +11,17 @@
 
 @interface SDKVersionViewController ()
 
-@property (nonatomic,strong)SDKVersionView *versionView;
+@property (unsafe_unretained, nonatomic) IBOutlet SDKVersionView *versionView;
 
 @end
 
 @implementation SDKVersionViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViews];
+    
 }
-
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 {
     if (CGRectContainsPoint(self.versionView.frame, point)) {
@@ -32,13 +33,6 @@
 - (void)setupViews
 {
     self.view.backgroundColor = [UIColor clearColor];
-    self.versionView = [SDKVersionView loadViewFromNib];
     [self.versionView setVersionInfo];
-    [self.view addSubview:self.versionView];
-    [self setupLayout];
-}
-- (void)setupLayout
-{
-    
 }
 @end
