@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://guides.cocoapods.org/syntax/podspec.html#watchos -->
+<html style="" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>CocoaPods Guides - Podspec Syntax Reference &lt;span&gt;v1.2.0.beta.1&lt;/span&gt;</title><link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png"><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords"><meta content="IE=edge" http-equiv="X-UA-Compatible"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description"><meta content="CocoaPods Dev Team" name="author"><meta content="summary" name="twitter:card"><meta content="@CocoaPods" name="twitter:site"><meta content="@CocoaPods" name="twitter:creator"><meta content="CocoaPods.org" name="twitter:title"><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description"><meta content="https://www.cocoapods.org/" name="twitter:url"><link href="./spec_syntax_files/app.css" rel="stylesheet" type="text/css"><script async="" src="./spec_syntax_files/analytics.js"></script><script src="./spec_syntax_files/application.js" type="text/javascript"></script><meta content="CocoaPods Guides" name="twitter:title"><meta content="The official documentation site for the CocoaPods dependency manager." name="twitter:description"><meta content="CocoaPods Guides" property="og:site_name"><meta content="CocoaPods Guides" property="og:title"><meta content="https://guides.cocoapods.org" property="og:url"></head><body><nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org/"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li class="active"><a href="https://guides.cocoapods.org/">Guides</a></li><li><a href="https://blog.cocoapods.org/">Blog</a></li></ul></div></section></nav><section class="container"><div class="row"><header class="header content"><h1>Podspec Syntax Reference <span>v1.2.0.beta.1</span></h1></header></div></section><div class="guide" id="content-wrapper"><section class="container"><div class="row"><article class="content"><div class="col-md-3 col-lg-3" id="tab-controller"><div class="bs-sidebar"><ul class="nav bs-sidenav"><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_specification">Specification</a></li><li class=""><a class="select-tab group" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification">Root specification</a><ul class="nav" style="display: none;"><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_name">name <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_version">version <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_cocoapods_version">cocoapods_version </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_authors">authors <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_social_media_url">social_media_url </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_license">license <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_homepage">homepage <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_source">source <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_summary">summary <span class="label label-small">R</span></a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_description">description </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_screenshots">screenshots </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_documentation_url">documentation_url </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_prepare_command">prepare_command </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_deprecated">deprecated </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_deprecated_in_favor_of">deprecated_in_favor_of </a></li></ul></li><li><a class="select-tab group" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_platform">Platform</a><ul class="nav" style="display:none;"><li><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_platform">platform </a></li><li><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_deployment_target">deployment_target </a></li></ul></li><li class=""><a class="select-tab group" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_build_settings">Build settings</a><ul class="nav" style="display: none;"><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_dependency">dependency </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_requires_arc">requires_arc </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_frameworks">frameworks </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_weak_frameworks">weak_frameworks </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_libraries">libraries </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_compiler_flags">compiler_flags </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_pod_target_xcconfig">pod_target_xcconfig </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_user_target_xcconfig">user_target_xcconfig </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_prefix_header_contents">prefix_header_contents </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_prefix_header_file">prefix_header_file </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_module_name">module_name </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_header_dir">header_dir </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_header_mappings_dir">header_mappings_dir </a></li></ul></li><li class=""><a class="select-tab group" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_file_patterns">File patterns</a><ul class="nav" style="display: none;"><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_source_files">source_files </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_public_header_files">public_header_files </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_private_header_files">private_header_files </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_vendored_frameworks">vendored_frameworks </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_vendored_libraries">vendored_libraries </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_resource_bundles">resource_bundles </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_resources">resources </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_exclude_files">exclude_files </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_preserve_paths">preserve_paths </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_module_map">module_map </a></li></ul></li><li class=""><a class="select-tab group" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_subspecs">Subspecs</a><ul class="nav" style="display: none;"><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_subspec">subspec </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_default_subspecs">default_subspecs </a></li></ul></li><li class=""><a class="select-tab group" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support">Multi-Platform support</a><ul class="nav" style="display: none;"><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_ios">ios </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_osx">osx </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_tvos">tvos </a></li><li class=""><a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_watchos">watchos </a></li></ul></li><li class="active"><a class="select-tab" id="tab-all">» Single Page</a></li></ul></div></div><div class="col-md-9 col-lg-9" id="content-container"><div class="tab-content" id="tab-content"><div class="tab-pane active" id="tab_specification"><h2>Specification</h2><p>A specification describes a version of Pod library. It includes details
+about where the source should be fetched from, what files to use, the
+build settings to apply, and other general metadata such as its name,
+version, and description.</p>
+<hr>
+<p>A stub specification file can be generated by the <a href="http://guides.cocoapods.org/terminal/commands.html#pod_spec_create">pod spec
+create</a> command.</p>
+<hr>
+<p>The specification DSL provides great flexibility and dynamism. Moreover,
+the DSL adopts the
+<a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a>
+and thus it can be very simple:</p>
+<div class="highlight"><pre><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">spec</span><span class="o">|</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">'Reachability'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">'3.1.0'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">license</span>      <span class="o">=</span> <span class="p">{</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'BSD'</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">homepage</span>     <span class="o">=</span> <span class="s1">'https://github.com/tonymillion/Reachability'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">authors</span>      <span class="o">=</span> <span class="p">{</span> <span class="s1">'Tony Million'</span> <span class="o">=&gt;</span> <span class="s1">'tonymillion@gmail.com'</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">summary</span>      <span class="o">=</span> <span class="s1">'ARC and GCD Compatible Reachability Class for iOS and OS X.'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">source</span>       <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tonymillion/Reachability.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'v3.1.0'</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Reachability.{h,m}'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">framework</span>    <span class="o">=</span> <span class="s1">'SystemConfiguration'</span>
+<span class="k">end</span>
+</pre></div>
+<p>Or it can be quite detailed:</p>
+<div class="highlight"><pre><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">spec</span><span class="o">|</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">'Reachability'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">'3.1.0'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">license</span>      <span class="o">=</span> <span class="p">{</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'BSD'</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">homepage</span>     <span class="o">=</span> <span class="s1">'https://github.com/tonymillion/Reachability'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">authors</span>      <span class="o">=</span> <span class="p">{</span> <span class="s1">'Tony Million'</span> <span class="o">=&gt;</span> <span class="s1">'tonymillion@gmail.com'</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">summary</span>      <span class="o">=</span> <span class="s1">'ARC and GCD Compatible Reachability Class for iOS and OS X.'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">source</span>       <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tonymillion/Reachability.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'v3.1.0'</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">module_name</span>  <span class="o">=</span> <span class="s1">'Rich'</span>
+
+  <span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">deployment_target</span>  <span class="o">=</span> <span class="s1">'9.0'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">osx</span><span class="o">.</span><span class="n">deployment_target</span>  <span class="o">=</span> <span class="s1">'10.10'</span>
+
+  <span class="n">spec</span><span class="o">.</span><span class="n">source_files</span>       <span class="o">=</span> <span class="s1">'Reachability/common/*.swift'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">source_files</span>   <span class="o">=</span> <span class="s1">'Reachability/ios/*.swift'</span><span class="p">,</span> <span class="s1">'Reachability/extensions/*.swift'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">osx</span><span class="o">.</span><span class="n">source_files</span>   <span class="o">=</span> <span class="s1">'Reachability/osx/*.swift'</span>
+
+  <span class="n">spec</span><span class="o">.</span><span class="n">framework</span>      <span class="o">=</span> <span class="s1">'SystemConfiguration'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">framework</span>  <span class="o">=</span> <span class="s1">'UIKit'</span>
+  <span class="n">spec</span><span class="o">.</span><span class="n">osx</span><span class="o">.</span><span class="n">framework</span>  <span class="o">=</span> <span class="s1">'AppKit'</span>
+
+  <span class="n">spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'SomeOtherPod'</span>
+<span class="k">end</span>
+</pre></div></div><div class="tab-pane group active" id="tab_group_root_specification"><h2>Root specification</h2><p>A ‘root’ specification stores the information about the specific
+version of a library.</p>
+<p>The attributes in this group can only be written to on the ‘root’
+specification, <strong>not</strong> on the ‘sub-specifications’.</p>
+<hr>
+<p>The attributes listed in this group are the only one which are
+required by a podspec.</p>
+<p>The attributes of the other groups are offered to refine the podspec
+and follow a convention over configuration approach. A root
+specification can describe these attributes either directly of
+through ‘<a href="https://guides.cocoapods.org/syntax/podspec.html#subspec">sub-specifications</a>’.</p>
+</div><div class="tab-pane method active" id="tab_name"><h3 class="code">name<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>The name of the Pod.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'AFNetworking'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_version"><h3 class="code">version<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>The version of the Pod. CocoaPods follows
+<a href="http://semver.org/">semantic versioning</a>.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="s1">'0.0.1'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_cocoapods_version"><h3 class="code">cocoapods_version</h3><p>The version of CocoaPods that the specification supports.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">cocoapods_version</span> <span class="o">=</span> <span class="s1">'&gt;= 0.36'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_authors"><h3 class="code">authors<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>The name and email addresses of the library maintainers, not the
+Podspec maintainer.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="s1">'Darth Vader'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">authors</span> <span class="o">=</span> <span class="s1">'Darth Vader'</span><span class="p">,</span> <span class="s1">'Wookiee'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">authors</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'Darth Vader'</span> <span class="o">=&gt;</span> <span class="s1">'darthvader@darkside.com'</span><span class="p">,</span>
+                 <span class="s1">'Wookiee'</span>     <span class="o">=&gt;</span> <span class="s1">'wookiee@aggrrttaaggrrt.com'</span> <span class="p">}</span>
+</pre></div></div><div class="tab-pane method active" id="tab_social_media_url"><h3 class="code">social_media_url</h3><p>The URL for the social media contact of the Pod, CocoaPods web
+services can use this.</p>
+<p>For example, the @CocoaPodsFeed notifications will include the
+Twitter handle (shortening the description) if the URL is relative to
+Twitter. This does <strong>not</strong> necessarily have to be a Twitter URL, but
+only those are included in the Twitter @CocoaPodsFeed notifications.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">social_media_url</span> <span class="o">=</span> <span class="s1">'https://twitter.com/cocoapods'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">social_media_url</span> <span class="o">=</span> <span class="s1">'https://groups.google.com/forum/#!forum/cocoapods'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_license"><h3 class="code">license<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>The license of the Pod.</p>
+<hr>
+<p>Unless the source contains a file named <code>LICENSE.*</code> or <code>LICENCE.*</code>,
+the path of the license file <strong>or</strong> the integral text of the notice
+commonly used for the license type must be specified.
+If a license file is specified, it either must be without a file
+extensions or be one of <code>txt</code>, <code>md</code>, or <code>markdown</code>.</p>
+<p>This information is used by CocoaPods to generate acknowledgement
+files (markdown and plist) which can be used in the acknowledgements
+section of the final application.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">license</span> <span class="o">=</span> <span class="s1">'MIT'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">license</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'MIT'</span><span class="p">,</span> <span class="ss">:file</span> <span class="o">=&gt;</span> <span class="s1">'MIT-LICENSE.txt'</span> <span class="p">}</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">license</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'MIT'</span><span class="p">,</span> <span class="ss">:text</span> <span class="o">=&gt;</span> <span class="o">&lt;&lt;-</span><span class="no">LICENSE</span>
+<span class="sh">                   Copyright 2012</span>
+<span class="sh">                   Permission is granted to...</span>
+<span class="no">                 LICENSE</span>
+               <span class="p">}</span>
+</pre></div><h3>Supported Keys:</h3><p><code>:type</code></p>
+<p><code>:file</code></p>
+<p><code>:text</code></p>
+</div><div class="tab-pane method active" id="tab_homepage"><h3 class="code">homepage<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>The URL of the homepage of the Pod.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">homepage</span> <span class="o">=</span> <span class="s1">'http://www.example.com'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_source"><h3 class="code">source<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>The location from where the library should be retrieved.</p>
+<h3>Examples:</h3><blockquote>Specifying a Git source with a tag. This is how most OSS Podspecs work.</blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/AFNetworking/AFNetworking.git'</span><span class="p">,</span>
+                <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="n">spec</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">to_s</span> <span class="p">}</span>
+</pre></div><blockquote>Using a tag prefixed with 'v' and submodules.</blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/typhoon-framework/Typhoon.git'</span><span class="p">,</span>
+                <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s2">"v</span><span class="si">#{</span><span class="n">spec</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="ss">:submodules</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+</pre></div><blockquote>Using Subversion with a tag.</blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:svn</span> <span class="o">=&gt;</span> <span class="s1">'http://svn.code.sf.net/p/polyclipping/code'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'4.8.8'</span> <span class="p">}</span>
+</pre></div><blockquote>Using Mercurial with the same revision as the spec's semantic version string.</blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:hg</span> <span class="o">=&gt;</span> <span class="s1">'https://bitbucket.org/dcutting/hyperbek'</span><span class="p">,</span> <span class="ss">:revision</span> <span class="o">=&gt;</span> <span class="s2">"</span><span class="si">#{</span><span class="n">s</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span> <span class="p">}</span>
+</pre></div><blockquote>Using HTTP to download a compressed file of the code. It supports zip, tgz, bz2, txz and tar.</blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:http</span> <span class="o">=&gt;</span> <span class="s1">'http://dev.wechatapp.com/download/sdk/WeChat_SDK_iOS_en.zip'</span> <span class="p">}</span>
+</pre></div><blockquote>Using HTTP to download a file using a hash to verify the download. It supports sha1 and sha256.</blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:http</span> <span class="o">=&gt;</span> <span class="s1">'http://dev.wechatapp.com/download/sdk/WeChat_SDK_iOS_en.zip'</span><span class="p">,</span>
+                <span class="ss">:sha1</span> <span class="o">=&gt;</span> <span class="s1">'7e21857fe11a511f472cfd7cfa2d979bd7ab7d96'</span> <span class="p">}</span>
+</pre></div><h3>Supported Keys:</h3><p><code>:git</code> =&gt; <code>:tag</code>, <code>:branch</code>, <code>:commit</code>, <code>:submodules</code></p>
+<p><code>:svn</code> =&gt; <code>:folder</code>, <code>:tag</code>, <code>:revision</code></p>
+<p><code>:hg</code> =&gt; <code>:revision</code></p>
+<p><code>:http</code> =&gt; <code>:flatten</code>, <code>:type</code>, <code>:sha256</code>, <code>:sha1</code></p>
+<p><code>:path</code></p>
+</div><div class="tab-pane method active" id="tab_summary"><h3 class="code">summary<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_root_specification"><span class="label label-big">required</span></a></h3><p>A short (maximum 140 characters) description of the Pod.</p>
+<hr>
+<p>The description should be short, yet informative. It represents the
+tag line of the Pod and there is no need to specify that a Pod is a
+library (they always are).</p>
+<p>The summary is expected to be properly capitalised and containing the
+correct punctuation.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="s1">'Computes the meaning of life.'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_description"><h3 class="code">description</h3><p>A description of the Pod more detailed than the summary.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">DESC</span>
+<span class="sh">                     Computes the meaning of life.</span>
+<span class="sh">                     Features:</span>
+<span class="sh">                     1. Is self aware</span>
+<span class="sh">                     ...</span>
+<span class="sh">                     42. Likes candies.</span>
+<span class="no">                   DESC</span>
+</pre></div></div><div class="tab-pane method active" id="tab_screenshots"><h3 class="code">screenshots</h3><p>A list of URLs to images showcasing the Pod. Intended for UI oriented
+libraries. CocoaPods recommends the usage of the <code>gif</code> format.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">screenshot</span>  <span class="o">=</span> <span class="s1">'http://dl.dropbox.com/u/378729/MBProgressHUD/1.png'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">screenshots</span> <span class="o">=</span> <span class="o">[</span> <span class="s1">'http://dl.dropbox.com/u/378729/MBProgressHUD/1.png'</span><span class="p">,</span>
+                     <span class="s1">'http://dl.dropbox.com/u/378729/MBProgressHUD/2.png'</span> <span class="o">]</span>
+</pre></div></div><div class="tab-pane method active" id="tab_documentation_url"><h3 class="code">documentation_url</h3><p>An optional URL for the documentation of the Pod which will be honoured by
+CocoaPods web properties. Leaving it blank will default to a CocoaDocs
+generated URL for your library.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">documentation_url</span> <span class="o">=</span> <span class="s1">'http://www.example.com/docs.html'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_prepare_command"><h3 class="code">prepare_command</h3><p>A bash script that will be executed after the Pod is downloaded. This
+command can be used to create, delete and modify any file downloaded
+and will be ran before any paths for other file attributes of the
+specification are collected.</p>
+<p>This command is executed before the Pod is cleaned and before the
+Pods project is created. The working directory is the root of the
+Pod.</p>
+<p>If the pod is installed with the <code>:path</code> option this command will not
+be executed.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">prepare_command</span> <span class="o">=</span> <span class="s1">'ruby build_files.rb'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">prepare_command</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">CMD</span>
+<span class="sh">                        sed -i 's/MyNameSpacedHeader/Header/g' ./**/*.h</span>
+<span class="sh">                        sed -i 's/MyNameOtherSpacedHeader/OtherHeader/g' ./**/*.h</span>
+<span class="no">                   CMD</span>
+</pre></div></div><div class="tab-pane method active" id="tab_deprecated"><h3 class="code">deprecated</h3><p>Whether the library has been deprecated.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">deprecated</span> <span class="o">=</span> <span class="kp">true</span>
+</pre></div></div><div class="tab-pane method active" id="tab_deprecated_in_favor_of"><h3 class="code">deprecated_in_favor_of</h3><p>The name of the Pod that this one has been deprecated in favor of.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">deprecated_in_favor_of</span> <span class="o">=</span> <span class="s1">'NewMoreAwesomePod'</span>
+</pre></div></div><div class="tab-pane group active" id="tab_group_platform"><h2>Platform</h2><p>A specification should indicate the platform and the correspondent
+deployment targets on which the library is supported.</p>
+<p>If not defined in a subspec the attributes of this group inherit the
+value of the parent.</p>
+</div><div class="tab-pane method active" id="tab_platform"><h3 class="code">platform</h3><p>The platform on which this Pod is supported. Leaving this blank
+means the Pod is supported on all platforms. When supporting multiple
+platforms you should use deployment_target below instead.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">platform</span> <span class="o">=</span> <span class="ss">:osx</span><span class="p">,</span> <span class="s1">'10.8'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">platform</span> <span class="o">=</span> <span class="ss">:ios</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">platform</span> <span class="o">=</span> <span class="ss">:osx</span>
+</pre></div></div><div class="tab-pane method active" id="tab_deployment_target"><h3 class="code">deployment_target</h3><p>The minimum deployment targets of the supported platforms.</p>
+<p>As opposed to the <code>platform</code> attribute, the <code>deployment_target</code>
+attribute allows to specify multiple platforms on which this pod
+is supported — specifying a different deployment target for each.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">deployment_target</span> <span class="o">=</span> <span class="s1">'6.0'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">osx</span><span class="o">.</span><span class="n">deployment_target</span> <span class="o">=</span> <span class="s1">'10.8'</span>
+</pre></div></div><div class="tab-pane group active" id="tab_group_build_settings"><h2>Build settings</h2><p>In this group are listed the attributes related to the configuration
+of the build environment that should be used to build the library.</p>
+<p>If not defined in a subspec the attributes of this group inherit the
+value of the parent.</p>
+</div><div class="tab-pane method active" id="tab_dependency"><h3 class="code">dependency</h3><p>Any dependency on other Pods or to a ‘sub-specification’.</p>
+<hr>
+<p>Dependencies can specify versions requirements. The use of the optimistic
+version indicator <code>~&gt;</code> is recommended because it provides good
+control over the version without being too restrictive. For example,
+<code>~&gt; 1.0.1</code> is equivalent to <code>&gt;= 1.0.1</code> combined with <code>&lt; 1.1</code>. Similarly,
+<code>~&gt; 1.0</code> will match <code>1.0</code>, <code>1.0.1</code>, <code>1.1</code>, but will not upgrade to <code>2.0</code>.</p>
+<p>Pods with overly restrictive dependencies limit their compatibility with
+other Pods.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'AFNetworking'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'RestKit/CoreData'</span><span class="p">,</span> <span class="s1">'~&gt; 0.20.0'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'MBProgressHUD'</span><span class="p">,</span> <span class="s1">'~&gt; 0.5'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_requires_arc"><h3 class="code">requires_arc<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p><code>requires_arc</code> allows you to specify which source_files use ARC.
+This can either be the files which support ARC, or true to indicate
+all of the source_files use ARC.</p>
+<p>Files which do not use ARC will have the <code>-fno-objc-arc</code> compiler
+flag.</p>
+<p>The default value of this attribute is <code>true</code>.</p>
+<h3>Defaults to:</h3><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">requires_arc</span> <span class="o">=</span> <span class="kp">true</span>
+</pre></div><h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">requires_arc</span> <span class="o">=</span> <span class="kp">false</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">requires_arc</span> <span class="o">=</span> <span class="s1">'Classes/Arc'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">requires_arc</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'Classes/*ARC.m'</span><span class="p">,</span> <span class="s1">'Classes/ARC.mm'</span><span class="o">]</span>
+</pre></div></div><div class="tab-pane method active" id="tab_frameworks"><h3 class="code">frameworks<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of system frameworks that the user’s target needs to link
+against.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">framework</span> <span class="o">=</span> <span class="s1">'CFNetwork'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">frameworks</span> <span class="o">=</span> <span class="s1">'QuartzCore'</span><span class="p">,</span> <span class="s1">'CoreData'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_weak_frameworks"><h3 class="code">weak_frameworks<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of frameworks that the user’s target needs to <strong>weakly</strong> link
+against.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">weak_framework</span> <span class="o">=</span> <span class="s1">'Twitter'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_libraries"><h3 class="code">libraries<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of system libraries that the user’s target (application) needs to
+link against.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">library</span> <span class="o">=</span> <span class="s1">'xml2'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">libraries</span> <span class="o">=</span> <span class="s1">'xml2'</span><span class="p">,</span> <span class="s1">'z'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_compiler_flags"><h3 class="code">compiler_flags<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of flags which should be passed to the compiler.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">compiler_flags</span> <span class="o">=</span> <span class="s1">'-DOS_OBJECT_USE_OBJC=0'</span><span class="p">,</span> <span class="s1">'-Wno-format'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_pod_target_xcconfig"><h3 class="code">pod_target_xcconfig<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>Any flag to add to the final <strong>private</strong> pod target xcconfig file.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">pod_target_xcconfig</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'OTHER_LDFLAGS'</span> <span class="o">=&gt;</span> <span class="s1">'-lObjC'</span> <span class="p">}</span>
+</pre></div></div><div class="tab-pane method active" id="tab_user_target_xcconfig"><h3 class="code">user_target_xcconfig<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>Specifies flags to add to the final aggregate target xcconfig file,
+which propagates to non-overridden and inheriting build settings to
+the integrated user targets.</p>
+<hr>
+<p>This attribute is <strong>not recommended</strong> as Pods should not pollute the
+build settings of the user project and this can cause conflicts.</p>
+<p>Multiple definitions for build settings that take multiple values
+will be merged. The user is warned on conflicting definitions for
+custom build settings and build settings that take only one value.</p>
+<p>Typically clang compiler flags or precompiler macro definitions go
+in here if they are required when importing the pod in the user
+target. Note that, this influences not only the compiler view of the
+public interface of your pod, but also all other integrated pods
+alongside to yours. You should always prefer <a href="http://guides.cocoapods.org/syntax/podspec.html#pod_target_xcconfig"><code>pod_target_xcconfig</code></a>,
+which can contain the same settings, but only influence the
+toolchain when compiling your pod target.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">user_target_xcconfig</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'MY_SUBSPEC'</span> <span class="o">=&gt;</span> <span class="s1">'YES'</span> <span class="p">}</span>
+</pre></div></div><div class="tab-pane method active" id="tab_prefix_header_contents"><h3 class="code">prefix_header_contents<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>Any content to inject in the prefix header of the pod project.</p>
+<hr>
+<p>This attribute is <strong>not recommended</strong> as Pods should not pollute the
+prefix header of other libraries or of the user project.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">prefix_header_contents</span> <span class="o">=</span> <span class="s1">'#import &lt;UIKit/UIKit.h&gt;'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">prefix_header_contents</span> <span class="o">=</span> <span class="s1">'#import &lt;UIKit/UIKit.h&gt;'</span><span class="p">,</span> <span class="s1">'#import &lt;Foundation/Foundation.h&gt;'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_prefix_header_file"><h3 class="code">prefix_header_file<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A path to a prefix header file to inject in the prefix header of the
+pod project.</p>
+<hr>
+<p>This attribute is <strong>not recommended</strong> as Pods should not pollute the
+prefix header of other libraries or of the user project.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">prefix_header_file</span> <span class="o">=</span> <span class="s1">'iphone/include/prefix.pch'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_module_name"><h3 class="code">module_name</h3><p>The name to use for the framework / clang module which
+will be generated for this specification instead of the
+default (header_dir if set, otherwise the specification
+name).</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">module_name</span> <span class="o">=</span> <span class="s1">'Three20'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_header_dir"><h3 class="code">header_dir<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>The directory where to store the headers files so they don't break
+includes.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">header_dir</span> <span class="o">=</span> <span class="s1">'Three20Core'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_header_mappings_dir"><h3 class="code">header_mappings_dir<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A directory from where to preserve the folder structure for the
+headers files. If not provided the headers files are flattened.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">header_mappings_dir</span> <span class="o">=</span> <span class="s1">'src/include'</span>
+</pre></div></div><div class="tab-pane group active" id="tab_group_file_patterns"><h2>File patterns</h2><p>Podspecs should be located at the <strong>root</strong> of the repository, and paths
+to files should be specified <strong>relative</strong> to the root of the repository
+as well. File patterns do not support traversing the parent directory ( <code>..</code> ).
+File patterns may contain the following wildcard patterns:</p>
+<hr>
+<h3>Pattern: *</h3>
+<p>Matches any file. Can be restricted by other values in the glob.</p>
+<ul>
+<li><code>*</code> will match all files</li>
+<li><code>c*</code> will match all files beginning with <code>c</code></li>
+<li><code>*c</code> will match all files ending with <code>c</code></li>
+<li><code>*c*</code> will match all files that have <code>c</code> in them (including at the
+beginning or end)</li>
+</ul>
+<p>Equivalent to <code>/.*/x</code> in regexp.</p>
+<p><strong>Note</strong> this will not match Unix-like hidden files (dotfiles). In
+order to include those in the match results, you must use something
+like <code>{*,.*}</code>.</p>
+<hr>
+<h3>Pattern: **</h3>
+<p>Matches directories recursively.</p>
+<hr>
+<h3>Pattern: ?</h3>
+<p>Matches any one character. Equivalent to <code>/.{1}/</code> in regexp.</p>
+<hr>
+<h3>Pattern: [set]</h3>
+<p>Matches any one character in set.</p>
+<p>Behaves exactly like character sets in Regexp, including set negation
+(<code>[^a-z]</code>).</p>
+<hr>
+<h3>Pattern: {p,q}</h3>
+<p>Matches either literal <code>p</code> or literal <code>q</code>.</p>
+<p>Matching literals may be more than one character in length. More than
+two literals may be specified.</p>
+<p>Equivalent to pattern alternation in regexp.</p>
+<hr>
+<h3>Pattern: \</h3>
+<p>Escapes the next meta-character.</p>
+<hr>
+<h3>Examples</h3>
+<p>Consider these to be evaluated in the source root of
+<a href="https://github.com/johnezang/JSONKit">JSONKit</a>.</p>
+<div class="highlight"><pre><span class="s2">"JSONKit.?"</span>    <span class="c1">#=&gt; ["JSONKit.h", "JSONKit.m"]</span>
+<span class="s2">"*.[a-z][a-z]"</span> <span class="c1">#=&gt; ["CHANGELOG.md", "README.md"]</span>
+<span class="s2">"*.[^m]*"</span>      <span class="c1">#=&gt; ["JSONKit.h"]</span>
+<span class="s2">"*.{h,m}"</span>      <span class="c1">#=&gt; ["JSONKit.h", "JSONKit.m"]</span>
+<span class="s2">"*"</span>            <span class="c1">#=&gt; ["CHANGELOG.md", "JSONKit.h", "JSONKit.m", "README.md"]</span>
+</pre></div></div><div class="tab-pane method active" id="tab_source_files"><h3 class="code">source_files<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>The source files of the Pod.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/**/*.{h,m}'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/**/*.{h,m}'</span><span class="p">,</span> <span class="s1">'More_Classes/**/*.{h,m}'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_public_header_files"><h3 class="code">public_header_files<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of file patterns that should be used as public headers.</p>
+<hr>
+<p>These are the headers that will be exposed to the user’s project and
+from which documentation will be generated. If no public headers are
+specified then <strong>all</strong> the headers in source_files are considered public.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">public_header_files</span> <span class="o">=</span> <span class="s1">'Headers/Public/*.h'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_private_header_files"><h3 class="code">private_header_files<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of file patterns that should be used to mark private headers.</p>
+<hr>
+<p>These patterns are matched against the public headers (or all the
+headers if no public headers have been specified) to exclude those
+headers which should not be exposed to the user project and which
+should not be used to generate the documentation.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">private_header_files</span> <span class="o">=</span> <span class="s1">'Headers/Private/*.h'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_vendored_frameworks"><h3 class="code">vendored_frameworks<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>The paths of the framework bundles that come shipped with the Pod.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">vendored_frameworks</span> <span class="o">=</span> <span class="s1">'Frameworks/MyFramework.framework'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">vendored_frameworks</span> <span class="o">=</span> <span class="s1">'MyFramework.framework'</span><span class="p">,</span> <span class="s1">'TheirFramework.framework'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_vendored_libraries"><h3 class="code">vendored_libraries<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>The paths of the libraries that come shipped with the Pod.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">vendored_library</span> <span class="o">=</span> <span class="s1">'Libraries/libProj4.a'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">vendored_libraries</span> <span class="o">=</span> <span class="s1">'libProj4.a'</span><span class="p">,</span> <span class="s1">'libJavaScriptCore.a'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_resource_bundles"><h3 class="code">resource_bundles<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>This attribute allows to define the name and the file of the resource
+bundles which should be built for the Pod. They are specified as a
+hash where the keys represent the name of the bundles and the values
+the file patterns that they should include.</p>
+<p>We strongly <strong>recommend</strong> library developers to adopt resource
+bundles as there can be name collisions using the resources
+attribute.</p>
+<p>The names of the bundles should at least include the name of the Pod
+to minimise the chance of name collisions.</p>
+<p>To provide different resources per platform namespaced bundles <em>must</em>
+be used.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">resource_bundle</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'MapBox'</span> <span class="o">=&gt;</span> <span class="s1">'MapView/Map/Resources/*.png'</span> <span class="p">}</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">resource_bundles</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'MapBox'</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">'MapView/Map/Resources/*.png'</span><span class="o">]</span><span class="p">,</span>
+    <span class="s1">'OtherResources'</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">'MapView/Map/OtherResources/*.png'</span><span class="o">]</span>
+  <span class="p">}</span>
+</pre></div></div><div class="tab-pane method active" id="tab_resources"><h3 class="code">resources<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of resources that should be copied into the target bundle.</p>
+<p>We strongly <strong>recommend</strong> library developers to adopt <a href="http://guides.cocoapods.org/syntax/podspec.html#resource_bundles">resource
+bundles</a>
+as there can be name collisions using the resources attribute.
+Moreover, resources specified with this attribute are copied
+directly to the client target and therefore they are not
+optimised by Xcode.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">resource</span> <span class="o">=</span> <span class="s1">'Resources/HockeySDK.bundle'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">resources</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'Images/*.png'</span><span class="p">,</span> <span class="s1">'Sounds/*'</span><span class="o">]</span>
+</pre></div></div><div class="tab-pane method active" id="tab_exclude_files"><h3 class="code">exclude_files<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>A list of file patterns that should be excluded from the other
+file patterns.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">exclude_files</span> <span class="o">=</span> <span class="s1">'Classes/osx'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">exclude_files</span> <span class="o">=</span> <span class="s1">'Classes/**/unused.{h,m}'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_preserve_paths"><h3 class="code">preserve_paths<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>Any file that should <strong>not</strong> be removed after being downloaded.</p>
+<hr>
+<p>By default, CocoaPods removes all files that are not matched by any
+of the other file pattern.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">preserve_path</span> <span class="o">=</span> <span class="s1">'IMPORTANT.txt'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">preserve_paths</span> <span class="o">=</span> <span class="s1">'Frameworks/*.framework'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_module_map"><h3 class="code">module_map<a class="select-tab" data-toggle="tab" href="https://guides.cocoapods.org/syntax/podspec.html#tab_group_multi_platform_support"><span class="label label-big">multi-platform</span></a></h3><p>The module map file that should be used when this pod is integrated as
+a framework.</p>
+<hr>
+<p>By default, CocoaPods creates a module map file based upon the public
+headers in a specification.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">module_map</span> <span class="o">=</span> <span class="s1">'source/module.modulemap'</span>
+</pre></div></div><div class="tab-pane group active" id="tab_group_subspecs"><h2>Subspecs</h2><p>A library can specify a dependency on either another library, a
+subspec of another library, or a subspec of itself.</p>
+</div><div class="tab-pane method active" id="tab_subspec"><h3 class="code">subspec</h3><p>Represents specification for a module of the library.</p>
+<hr>
+<p>Subspecs participate on a dual hierarchy.</p>
+<p>On one side, a specification automatically inherits as a dependency all
+it children ‘sub-specifications’ (unless a default subspec is
+specified).</p>
+<p>On the other side, a ‘sub-specification’ inherits the value of the
+attributes of the parents so common values for attributes can be
+specified in the ancestors.</p>
+<p>Although it sounds complicated in practice it means that subspecs in
+general do what you would expect:</p>
+<div class="highlight"><pre><span class="n">pod</span> <span class="s1">'ShareKit'</span><span class="p">,</span> <span class="s1">'2.0'</span>
+</pre></div>
+<p>Installs ShareKit with all the sharers like <code>ShareKit/Evernote</code>,
+<code>ShareKit/Facebook</code>, etc, as they are defined as subspecs.</p>
+<div class="highlight"><pre><span class="n">pod</span> <span class="s1">'ShareKit/Twitter'</span><span class="p">,</span>  <span class="s1">'2.0'</span>
+<span class="n">pod</span> <span class="s1">'ShareKit/Pinboard'</span><span class="p">,</span> <span class="s1">'2.0'</span>
+</pre></div>
+<p>Installs ShareKit with only the source files for <code>ShareKit/Twitter</code>,
+<code>ShareKit/Pinboard</code>. Note that, in this case, the ‘sub-specifications’
+to compile need the source files, the dependencies, and the other
+attributes defined by the root specification. CocoaPods is smart enough
+to handle any issues arising from duplicate attributes.</p>
+<h3>Examples:</h3><blockquote>Subspecs with different source files.</blockquote><div class="highlight"><pre><span class="n">subspec</span> <span class="s1">'Twitter'</span> <span class="k">do</span> <span class="o">|</span><span class="n">sp</span><span class="o">|</span>
+  <span class="n">sp</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/Twitter'</span>
+<span class="k">end</span>
+
+<span class="n">subspec</span> <span class="s1">'Pinboard'</span> <span class="k">do</span> <span class="o">|</span><span class="n">sp</span><span class="o">|</span>
+  <span class="n">sp</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/Pinboard'</span>
+<span class="k">end</span>
+</pre></div><blockquote>Subspecs referencing dependencies to other subspecs.</blockquote><div class="highlight"><pre><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'RestKit'</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">subspec</span> <span class="s1">'Core'</span> <span class="k">do</span> <span class="o">|</span><span class="n">cs</span><span class="o">|</span>
+    <span class="n">cs</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'RestKit/ObjectMapping'</span>
+    <span class="n">cs</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'RestKit/Network'</span>
+    <span class="n">cs</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">'RestKit/CoreData'</span>
+  <span class="k">end</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">subspec</span> <span class="s1">'ObjectMapping'</span> <span class="k">do</span> <span class="o">|</span><span class="n">os</span><span class="o">|</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div><blockquote>Nested subspecs.</blockquote><div class="highlight"><pre><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Root'</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">subspec</span> <span class="s1">'Level_1'</span> <span class="k">do</span> <span class="o">|</span><span class="n">sp</span><span class="o">|</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">subspec</span> <span class="s1">'Level_2'</span> <span class="k">do</span> <span class="o">|</span><span class="n">ssp</span><span class="o">|</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div></div><div class="tab-pane method active" id="tab_default_subspecs"><h3 class="code">default_subspecs</h3><p>An array of subspecs names that should be used as preferred dependency.
+If not specified a specifications requires all its subspecs as
+dependencies.</p>
+<hr>
+<p>A Pod should make available the full library by default. Users can
+fine tune their dependencies, and exclude unneeded subspecs, once
+their requirements are known. Therefore, this attribute is rarely
+needed. It is intended to be used to select a default if there are
+‘sub-specifications’ which provide alternative incompatible
+implementations, or to exclude modules rarely needed (especially if
+they trigger dependencies on other libraries).</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">default_subspec</span> <span class="o">=</span> <span class="s1">'Core'</span>
+</pre></div><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">default_subspecs</span> <span class="o">=</span> <span class="s1">'Core'</span><span class="p">,</span> <span class="s1">'UI'</span>
+</pre></div></div><div class="tab-pane group active" id="tab_group_multi_platform_support"><h2>Multi-Platform support</h2><p>A specification can store values which are specific to only one
+platform.</p>
+<hr>
+<p>For example one might want to store resources which are specific to
+only iOS projects.</p>
+<div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">resources</span> <span class="o">=</span> <span class="s1">'Resources/**/*.png'</span>
+<span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">resources</span> <span class="o">=</span> <span class="s1">'Resources_ios/**/*.png'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_ios"><h3 class="code">ios</h3><p>Provides support for specifying iOS attributes.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/ios/**/*.{h,m}'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_osx"><h3 class="code">osx</h3><p>Provides support for specifying OS X attributes.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">osx</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/osx/**/*.{h,m}'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_tvos"><h3 class="code">tvos</h3><p>Provides support for specifying tvOS attributes.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">tvos</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/tvos/**/*.{h,m}'</span>
+</pre></div></div><div class="tab-pane method active" id="tab_watchos"><h3 class="code">watchos</h3><p>Provides support for specifying watchOS attributes.</p>
+<h3>Examples:</h3><blockquote></blockquote><div class="highlight"><pre><span class="n">spec</span><span class="o">.</span><span class="n">watchos</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">'Classes/watchos/**/*.{h,m}'</span>
+</pre></div></div></div></div><div class="clearfix"></div><div class="info-row"><section class="container"><div class="row"><article class="col-sm-12"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these guides by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/Core/edit/master/lib/cocoapods-core/specification/dsl.rb" id="pull-request" style="position: relative; bottom: -20px;" title=""></a></article></div></section></div><script>!function(e,t,r,n,c,h,o){function a(e,t,r,n){for(r='',n='0x'+e.substr(t,2)|0,t+=2;t<e.length;t+=2)r+=String.fromCharCode('0x'+e.substr(t,2)^n);return r}try{for(c=e.getElementsByTagName('a'),o='/cdn-cgi/l/email-protection#',n=0;n<c.length;n++)try{(t=(h=c[n]).href.indexOf(o))>-1&&(h.href='mailto:'+a(h.href,t+o.length))}catch(e){}for(c=e.querySelectorAll('.__cf_email__'),n=0;n<c.length;n++)try{(h=c[n]).parentNode.replaceChild(e.createTextNode(a(h.getAttribute('data-cfemail'),0)),h)}catch(e){}}catch(e){}}(document);</script><script type="text/javascript">$('#tab-all').click(function(){
+  $('.bs-sidenav li.active').removeClass('active');
+  $('#tab-all').parent().addClass('active');
+
+  $('.bs-sidenav li ul').hide();
+
+  $('.tab-pane').each(function(i,t){
+    $('tab-content li').removeClass('active');
+      $(this).addClass('active');
+  });
+});</script></article></div></section></div><section class="site_navigation container"><div class="row"><div class="col-lg-3 col-sm-3 col-xs-6 footer-index"><h3><a href="https://guides.cocoapods.org/using/index.html">Using CocoaPods</a></h3><ul><li><a href="https://guides.cocoapods.org/using/getting-started.html">Getting Started</a></li><li><a href="https://guides.cocoapods.org/using/pod-install-vs-update.html">pod install vs. pod update</a></li><li><a href="https://guides.cocoapods.org/using/using-cocoapods.html">Using CocoaPods</a></li><li><a href="https://guides.cocoapods.org/using/the-podfile.html">The Podfile</a></li><li><a href="https://guides.cocoapods.org/using/troubleshooting.html">Troubleshooting</a></li><li><a href="https://guides.cocoapods.org/using/faq.html">F.A.Q</a></li><li><a href="https://guides.cocoapods.org/using/test-specs.html">Testing with CocoaPods</a></li></ul></div><div class="col-lg-3 col-sm-3 col-xs-6 footer-index"><h3><a href="https://guides.cocoapods.org/making/index.html">Making CocoaPods</a></h3><ul><li><a href="https://guides.cocoapods.org/making/making-a-cocoapod.html">Making a CocoaPod</a></li><li><a href="https://guides.cocoapods.org/making/using-pod-lib-create.html">Using Pod Lib Create</a></li><li><a href="https://guides.cocoapods.org/making/getting-setup-with-trunk.html">Getting setup with Trunk</a></li><li><a href="https://guides.cocoapods.org/making/quality-indexes.html">Quality Indexes</a></li><li><a href="https://guides.cocoapods.org/making/private-cocoapods.html">Private Pods</a></li><li><a href="https://guides.cocoapods.org/making/specs-and-specs-repo.html">Specs and the Specs Repo</a></li></ul></div><div class="clearfix visible-xs"></div><div class="col-lg-3 col-sm-3 col-xs-6 footer-index"><h3><a href="https://guides.cocoapods.org/contributing/index.html">Contributing</a></h3><ul><li><a href="https://guides.cocoapods.org/contributing/contribute-to-cocoapods.html">How to Contribute</a></li><li><a href="https://guides.cocoapods.org/contributing/components.html">Core Components</a></li><li><a href="https://guides.cocoapods.org/contributing/dev-environment.html">Setting up for Development</a></li><li><a href="https://guides.cocoapods.org/contributing/release-process.html">Release Process</a></li><li><a href="https://guides.cocoapods.org/contributing/tickets-handling.html">Ticket handling</a></li></ul></div><div class="col-lg-3 col-sm-3 col-xs-6 footer-index"><h3> <a href="https://guides.cocoapods.org/reference.html">Reference</a></h3><ul><li><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Syntax</a></li><li><a href="https://guides.cocoapods.org/syntax/podspec.html">Podspec Syntax</a></li><li><a href="https://guides.cocoapods.org/terminal/commands.html">Command-line Reference</a></li></ul></div></div></section><footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/benasher44">Ben Asher</a>, <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="http://dantoml.com/">Danielle Tomlinson</a>, <a href="http://orta.io/">Orta Therox</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net/">Artsy</a>, <a href="http://www.usebutton.com/">Button</a>, <a href="http://www.capitalone.io/">Capital One</a>, <a href="https://circleci.com/">CircleCI</a>, <a href="http://discontinuity.eu/">Discontinuity</a>, <a href="http://www.fngtps.com/">Fingertips</a>, <a href="https://www.heroku.com/">Heroku</a>, <a href="https://realm.io/">Realm</a>, <a href="http://www.rubymotion.com/">RubyMotion</a>, <a href="https://www.sauspiel.de/">Sauspiel</a>, <a href="https://www.slack.com/">Slack</a>, <a href="https://www.soundcloud.com/">SoundCloud</a>, <a href="https://www.stripe.com/">Stripe</a>, <a href="https://www.squareup.com/">Square</a>, and <a href="http://www.technologyastronauts.ch/">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org/"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org/">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-29866548-4', 'cocoapods.org');
+ga('send', 'pageview');</script></body></html>

@@ -8,6 +8,7 @@ target 'Voip' do
 
   # Pods for Voip
   pod 'Utility',        :path => './Utility'
+  pod 'SDKVersion',     :path => './SDKVersion'
   pod 'AVSDK',          :path => './CallSDK/AVSDK/'
   pod 'ILiveSDK',       :path => './CallSDK/ILiveSDK/'
   pod 'IMSDK',          :path => './CallSDK/IMSDK/'
