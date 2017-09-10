@@ -39,12 +39,13 @@
 #pragma mark - Views
 + (UIView *)instantiateRealViewFromPlaceholder:(UIView *)view
 {
-    UIView *realView = [[NSBundle bundleForClass:self] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+    UIView *realView = [[UINib nibWithNibName:NSStringFromClass(self) bundle:nil] instantiateWithOwner:nil options:nil].lastObject;
     realView.tag = view.tag;
     realView.frame = view.frame;
     realView.bounds = view.bounds;
     realView.hidden = view.hidden;
     realView.contentMode = view.contentMode;
+    realView.backgroundColor = view.backgroundColor;
     realView.clipsToBounds = view.clipsToBounds;
     realView.autoresizingMask = view.autoresizingMask;
     realView.userInteractionEnabled = view.userInteractionEnabled;

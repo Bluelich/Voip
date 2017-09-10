@@ -14,6 +14,8 @@
     CGFloat kScreenHeight;
 }
 @property (nonatomic,assign)CGPoint  currentPoint;
+@property (nonatomic,strong)NSLayoutConstraint *top;
+@property (nonatomic,strong)NSLayoutConstraint *leading;
 @end
 
 @implementation MoveAbleView
@@ -24,6 +26,25 @@
     kScreenHeight = UIScreen.mainScreen.bounds.size.height;
     self.userInteractionEnabled = YES;
     _currentPoint = CGPointMake(NSNotFound, NSNotFound);
+}
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstItem == self) {
+            NSLog(@"");
+            switch (obj.firstAttribute) {
+                case NSLayoutAttributeTop:
+                    self.top = obj;
+                    break;
+                case NSLayoutAttributeLeading:
+                    self.leading = obj;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }];
 }
 #pragma mark - touches
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -81,15 +102,9 @@
 }
 - (void)updateWithTargetFrame:(CGRect)frame animated:(BOOL)animated
 {
+    self.top.constant = CGRectGetMinY(frame);
+    self.leading.constant = CGRectGetMinX(frame);
     [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
-        [self removeConstraint:self.constraints];
-        NSLayoutConstraint *leading =
-//        [self.leadingAnchor constraintEqualToAnchor:self.superview.leadingAnchor constant:CGRectGetMinX(frame)];
-        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeading multiplier:1.0 constant:CGRectGetMinX(frame)];
-        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:CGRectGetMinY(frame)];
-        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:CGRectGetWidth(frame)];
-        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1.0 constant:CGRectGetHeight(frame)];
-        [self addConstraints:@[leading,top,width,height]];
         [self.superview layoutIfNeeded];
     }];
 }

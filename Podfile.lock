@@ -10,7 +10,7 @@ PODS:
   - SDKVersion (0.0.1)
   - TILCallSDK (1.0.14.11684)
   - Utility (0.0.1):
-    - YYKit (~> 1.0.9)
+    - YYKit
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   QAVEffect: 89b591bfbeb4a89065ed2358a0101801fbb5f2f5
   SDKVersion: ed811c7c95c232614d5b0f01269a32e1a3ffc19c
   TILCallSDK: 7f178bdce33e7afde00e2739beeebf87be45a7bc
-  Utility: 5f62406f7e8b4f00f7c7f55b635e9783484f847d
+  Utility: 69fd1f6420e33c795ed38f0124da4ebeea41b21c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 PODFILE CHECKSUM: 8b9a60602927491c79117f9e76a5d3f189076534

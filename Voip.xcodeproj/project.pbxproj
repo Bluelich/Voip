@@ -413,8 +413,7 @@
 				TargetAttributes = {
 					B48555571F5CFE2C0068F4C6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VX3477C4M7;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -426,14 +425,12 @@
 					};
 					B48555731F5CFE2C0068F4C6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VX3477C4M7;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = B48555571F5CFE2C0068F4C6;
 					};
 					B485557E1F5CFE2C0068F4C6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VX3477C4M7;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = B48555571F5CFE2C0068F4C6;
 					};
 				};
@@ -850,7 +847,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Voip/Voip.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VX3477C4M7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -875,7 +872,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Voip/Voip.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VX3477C4M7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -898,7 +895,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VX3477C4M7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -921,7 +918,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = VX3477C4M7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -942,7 +939,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF4822E51F2C055C48BD257C /* Pods-VoipUITests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = VX3477C4M7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -954,6 +951,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluelich.VoipUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_TARGET_NAME = Voip;
 			};
 			name = Debug;
@@ -962,7 +960,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE11C5F6173B8C2FDEFDAEF6 /* Pods-VoipUITests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = VX3477C4M7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -974,6 +972,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluelich.VoipUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_TARGET_NAME = Voip;
 			};
 			name = Release;

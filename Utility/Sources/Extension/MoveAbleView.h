@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define MAS_SHORTHAND_GLOBALS
 
 @interface MoveAbleView : UIView
 

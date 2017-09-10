@@ -13,6 +13,5 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "", :tag => spec.version.to_s }
   spec.source_files = 'Sources/','Sources/**/*.{h,m}'
   spec.resources    = ['Sources/**/*.xib']
-  spec.frameworks   = "Foundation",
-					            "UIKit"
+  spec.frameworks   = 'Foundation','UIKit'
 end

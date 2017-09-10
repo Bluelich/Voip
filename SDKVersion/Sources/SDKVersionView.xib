@@ -9,94 +9,88 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SDKVersionView">
-            <connections>
-                <outlet property="view" destination="iN0-l3-epB" id="Gfi-7S-m0b"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SDKVersionView">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="130"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="0CN-sA-EC2" customClass="SDKVersionView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0i-gs-XrF" userLabel="ilive_version">
-                    <rect key="frame" x="76" y="8" width="37.5" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qib-2P-vmO" userLabel="call_version">
-                    <rect key="frame" x="76" y="41" width="37.5" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBk-Hw-617" userLabel="qav_version">
-                    <rect key="frame" x="76" y="74" width="37.5" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQL-7L-haD" userLabel="im_version">
-                    <rect key="frame" x="76" y="107" width="37.5" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iLiveSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfc-dY-gti">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iLiveSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNG-72-GFm">
                     <rect key="frame" x="8" y="8" width="61" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CallSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LM-lp-4RP">
-                    <rect key="frame" x="8" y="41" width="55.5" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CallSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5k-r0-w2Y">
+                    <rect key="frame" x="8" y="36" width="55.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ga-et-nCg">
-                    <rect key="frame" x="8" y="107" width="46.5" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-82-dkS">
+                    <rect key="frame" x="8" y="92" width="46.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QAVSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AD-jR-bL9">
-                    <rect key="frame" x="8" y="74" width="59.5" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QAVSDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wp-oc-MNN">
+                    <rect key="frame" x="8" y="64" width="59.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="live_version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfC-AU-gmz" userLabel="ilive_version">
+                    <rect key="frame" x="73" y="8" width="78" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="call_version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oze-nV-Aru" userLabel="call_version">
+                    <rect key="frame" x="73" y="36" width="79" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="im_version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY8-Ep-XVW" userLabel="im_version">
+                    <rect key="frame" x="73" y="92" width="72" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qav_version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ow-Hn-k9g" userLabel="qav_version">
+                    <rect key="frame" x="73" y="64" width="79" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="yQL-7L-haD" firstAttribute="centerY" secondItem="5Ga-et-nCg" secondAttribute="centerY" id="292-Kt-wZ1"/>
-                <constraint firstItem="a0i-gs-XrF" firstAttribute="centerY" secondItem="Gfc-dY-gti" secondAttribute="centerY" id="5Lv-aP-lhy"/>
-                <constraint firstItem="5LM-lp-4RP" firstAttribute="top" secondItem="Gfc-dY-gti" secondAttribute="bottom" constant="15" id="7Jw-dY-C0O"/>
-                <constraint firstItem="9AD-jR-bL9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="9kY-ve-mye"/>
-                <constraint firstItem="BBk-Hw-617" firstAttribute="centerY" secondItem="9AD-jR-bL9" secondAttribute="centerY" id="9vQ-tH-q29"/>
-                <constraint firstItem="Gfc-dY-gti" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="Fel-lJ-yUj"/>
-                <constraint firstItem="Gfc-dY-gti" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="Ne8-52-Lgy"/>
-                <constraint firstItem="9AD-jR-bL9" firstAttribute="top" secondItem="5LM-lp-4RP" secondAttribute="bottom" constant="15" id="S04-Nh-J4M"/>
-                <constraint firstItem="Qib-2P-vmO" firstAttribute="centerY" secondItem="5LM-lp-4RP" secondAttribute="centerY" id="UN8-bs-zMW"/>
-                <constraint firstItem="5LM-lp-4RP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="UzD-hk-vOr"/>
-                <constraint firstItem="a0i-gs-XrF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="76" id="c8E-82-mRL"/>
-                <constraint firstItem="yQL-7L-haD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="76" id="ekV-Kf-Vuf"/>
-                <constraint firstItem="BBk-Hw-617" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="76" id="kP4-5X-VVn"/>
-                <constraint firstItem="Qib-2P-vmO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="76" id="vNL-0Q-rGz"/>
-                <constraint firstItem="5Ga-et-nCg" firstAttribute="top" secondItem="9AD-jR-bL9" secondAttribute="bottom" constant="15" id="vlb-OM-HDA"/>
-                <constraint firstItem="5Ga-et-nCg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="y1Q-hM-Sgd"/>
+                <constraint firstItem="cY8-Ep-XVW" firstAttribute="baseline" secondItem="msX-82-dkS" secondAttribute="baseline" id="5lf-hi-eS2"/>
+                <constraint firstItem="Oze-nV-Aru" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" constant="65" id="7hZ-Ej-LrK"/>
+                <constraint firstItem="bNG-72-GFm" firstAttribute="top" secondItem="0CN-sA-EC2" secondAttribute="topMargin" id="EeU-zn-s4s"/>
+                <constraint firstItem="Oze-nV-Aru" firstAttribute="baseline" secondItem="a5k-r0-w2Y" secondAttribute="baseline" id="F2G-ML-cPy"/>
+                <constraint firstItem="cY8-Ep-XVW" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" constant="65" id="Gkn-AP-08n"/>
+                <constraint firstItem="RfC-AU-gmz" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" constant="65" id="HFu-qK-PvH"/>
+                <constraint firstItem="3wp-oc-MNN" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" id="JJw-fL-d0t"/>
+                <constraint firstItem="3wp-oc-MNN" firstAttribute="top" secondItem="a5k-r0-w2Y" secondAttribute="bottom" constant="10" id="Ki5-RR-AVr"/>
+                <constraint firstItem="a5k-r0-w2Y" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" id="Knh-vB-ArV"/>
+                <constraint firstItem="msX-82-dkS" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" id="Mop-yd-VqR"/>
+                <constraint firstItem="RfC-AU-gmz" firstAttribute="baseline" secondItem="bNG-72-GFm" secondAttribute="baseline" id="U1H-4W-Hqw"/>
+                <constraint firstItem="bNG-72-GFm" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" id="bBV-vt-1ru"/>
+                <constraint firstItem="6ow-Hn-k9g" firstAttribute="baseline" secondItem="3wp-oc-MNN" secondAttribute="baseline" id="ekl-ZF-duW"/>
+                <constraint firstItem="a5k-r0-w2Y" firstAttribute="top" secondItem="bNG-72-GFm" secondAttribute="bottom" constant="10" id="lYT-uc-pPd"/>
+                <constraint firstItem="msX-82-dkS" firstAttribute="top" secondItem="3wp-oc-MNN" secondAttribute="bottom" constant="10" id="mV4-K9-pbC"/>
+                <constraint firstItem="6ow-Hn-k9g" firstAttribute="leading" secondItem="0CN-sA-EC2" secondAttribute="leadingMargin" constant="65" id="xKd-Wh-bse"/>
             </constraints>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="callSDK_VersionLabel" destination="Qib-2P-vmO" id="mGg-zp-ego"/>
-                <outlet property="iLive_VersionLabel" destination="a0i-gs-XrF" id="hBH-7l-9gD"/>
-                <outlet property="imSDK__VersionLabel" destination="yQL-7L-haD" id="jiH-C9-IpE"/>
-                <outlet property="qavSDK_VersionLabel" destination="BBk-Hw-617" id="bHl-hg-D6C"/>
+                <outlet property="callSDK_VersionLabel" destination="6ow-Hn-k9g" id="dt5-fJ-ZBl"/>
+                <outlet property="iLive_VersionLabel" destination="RfC-AU-gmz" id="n9Q-61-BO0"/>
+                <outlet property="imSDK__VersionLabel" destination="cY8-Ep-XVW" id="vQP-WY-3Ib"/>
+                <outlet property="qavSDK_VersionLabel" destination="6ow-Hn-k9g" id="in1-ms-byJ"/>
             </connections>
-            <point key="canvasLocation" x="-45" y="-218"/>
+            <point key="canvasLocation" x="90" y="-30"/>
         </view>
     </objects>
 </document>

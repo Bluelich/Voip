@@ -11,18 +11,16 @@
 
 @interface SDKVersionWindow ()
 
-@property (class,nonatomic,strong,readonly)SDKVersionWindow *window;
-
 @end
 
 @implementation SDKVersionWindow
 + (void)setHidden:(BOOL)hidden
 {
-    self.window.hidden = hidden;
+    SDKVersionWindow.window.hidden = hidden;
 }
 + (BOOL)isHidden
 {
-    return self.window.isHidden;
+    return SDKVersionWindow.window.isHidden;
 }
 + (instancetype)window
 {
