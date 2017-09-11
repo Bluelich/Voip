@@ -29,7 +29,7 @@
 - (void)makeCall{
     TILCallConfig * config = [[TILCallConfig alloc] init];
     TILCallBaseConfig * baseConfig = [[TILCallBaseConfig alloc] init];
-    baseConfig.callType = TILCALL_TYPE_VIDEO;
+    baseConfig.callType = self.callType;
     baseConfig.isSponsor = YES;
     baseConfig.peerId = _peerId;
     baseConfig.heartBeatInterval = 5;
@@ -53,7 +53,9 @@
     
     _call = [[TILC2CCall alloc] initWithConfig:config];
     
-    [_call createRenderViewIn:self.view];
+    if (self.callType == TILCALL_TYPE_VIDEO) {
+        [_call createRenderViewIn:self.view];
+    }
     __weak typeof(self) ws = self;
     [_call makeCall:nil custom:nil result:^(TILCallError *err) {
         if(err){

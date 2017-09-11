@@ -16,6 +16,7 @@ target 'Voip' do
   pod 'TILCallSDK',     :path => './CallSDK/TILCallSDK/'
   pod 'JPush',          '~> 3.0.6'
   pod 'NWPusher',       '~> 0.7.0'
+  pod 'YYModel',        '~> 1.0.4'
   target 'VoipTests' do
     inherit! :search_paths
     # Pods for testing

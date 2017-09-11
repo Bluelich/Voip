@@ -6,7 +6,7 @@
 //  Copyright © 2017 zhouqiang. All rights reserved.
 //
 
-#import <Utility/MoveAbleView.h>
+#import "MoveAbleView.h"
 
 @interface SDKVersionView : MoveAbleView
 

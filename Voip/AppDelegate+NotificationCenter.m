@@ -8,6 +8,7 @@
 
 #import "AppDelegate+NotificationCenter.h"
 #import <UserNotifications/UserNotifications.h>
+#import "AppDelegate+Notification.h"
 
 @implementation AppDelegate (NotificationCenter)
 
@@ -41,7 +42,7 @@
         }
     }
     //给通知内容设置category
-    content.categoryIdentifier = @"category1";
+    content.categoryIdentifier = kNotificationInputCategoryIdentifier;
     /*
      按照calendar触发
      NSDateComponents *components = ...

@@ -35,6 +35,5 @@ Pod::Spec.new do |spec|
 					  "resolv",
 					  "sqlite3.0",
 					  "protobuf"
-  spec.dependency 'YYKit'
   spec.xcconfig     = { "OTHER_CFLAGS" => "-ObjC", "ENABLE_BITCODE" => "NO" }
 end

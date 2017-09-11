@@ -14,4 +14,5 @@ Pod::Spec.new do |spec|
   spec.source_files = 'Sources/','Sources/**/*.{h,m}'
   spec.resources    = ['Sources/**/*.xib']
   spec.frameworks   = 'Foundation','UIKit'
+  spec.dependency     'YYModel'
 end

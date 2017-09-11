@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		918AF48891F87E14C69E519E /* libPods-VoipTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F805391A3495B719E8B2539 /* libPods-VoipTests.a */; };
 		AA046299BF0FD89525CC7CF4 /* libPods-VoipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C85788AF3307CD89B8DEE0 /* libPods-VoipUITests.a */; };
+		B421BDDA1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */; };
+		B421BDDB1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */; };
+		B421BDDC1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */; };
+		B421BDE21F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */; };
+		B421BDE31F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */; };
+		B421BDE41F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */; };
 		B474E4121F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */; };
 		B474E4131F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */; };
 		B474E4141F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */; };
 		B485555D1F5CFE2C0068F4C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B485555C1F5CFE2C0068F4C6 /* main.m */; };
 		B48555601F5CFE2C0068F4C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B485555F1F5CFE2C0068F4C6 /* AppDelegate.m */; };
-		B48555661F5CFE2C0068F4C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B48555641F5CFE2C0068F4C6 /* Main.storyboard */; };
 		B48555691F5CFE2C0068F4C6 /* Voip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B48555671F5CFE2C0068F4C6 /* Voip.xcdatamodeld */; };
 		B485556B1F5CFE2C0068F4C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B485556A1F5CFE2C0068F4C6 /* Assets.xcassets */; };
 		B485556E1F5CFE2C0068F4C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B485556C1F5CFE2C0068F4C6 /* LaunchScreen.storyboard */; };
@@ -38,9 +43,6 @@
 		B48555F41F5D13750068F4C6 /* CallRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555DB1F5D13750068F4C6 /* CallRegisterViewController.m */; };
 		B48555F51F5D13750068F4C6 /* CallRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555DB1F5D13750068F4C6 /* CallRegisterViewController.m */; };
 		B48555F61F5D13750068F4C6 /* CallRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555DB1F5D13750068F4C6 /* CallRegisterViewController.m */; };
-		B48555F71F5D13750068F4C6 /* CallTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555DD1F5D13750068F4C6 /* CallTableViewController.m */; };
-		B48555F81F5D13750068F4C6 /* CallTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555DD1F5D13750068F4C6 /* CallTableViewController.m */; };
-		B48555F91F5D13750068F4C6 /* CallTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555DD1F5D13750068F4C6 /* CallTableViewController.m */; };
 		B48555FA1F5D13750068F4C6 /* CallMultiMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555E01F5D13750068F4C6 /* CallMultiMainViewController.m */; };
 		B48555FB1F5D13750068F4C6 /* CallMultiMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555E01F5D13750068F4C6 /* CallMultiMainViewController.m */; };
 		B48555FC1F5D13750068F4C6 /* CallMultiMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48555E01F5D13750068F4C6 /* CallMultiMainViewController.m */; };
@@ -68,6 +70,15 @@
 		B49AC9E61F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */; };
 		B49AC9E71F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */; };
 		B49AC9E81F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */; };
+		B4DED8B61F669F070038827D /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B51F669F070038827D /* C2CCall.storyboard */; };
+		B4DED8B71F669F070038827D /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B51F669F070038827D /* C2CCall.storyboard */; };
+		B4DED8B81F669F070038827D /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B51F669F070038827D /* C2CCall.storyboard */; };
+		B4DED8BA1F669F0E0038827D /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B91F669F0E0038827D /* MultiCall.storyboard */; };
+		B4DED8BB1F669F0E0038827D /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B91F669F0E0038827D /* MultiCall.storyboard */; };
+		B4DED8BC1F669F0E0038827D /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B91F669F0E0038827D /* MultiCall.storyboard */; };
+		B4DED8BE1F66A03D0038827D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8BD1F66A03D0038827D /* Login.storyboard */; };
+		B4DED8BF1F66A03D0038827D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8BD1F66A03D0038827D /* Login.storyboard */; };
+		B4DED8C01F66A03D0038827D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8BD1F66A03D0038827D /* Login.storyboard */; };
 		E794BA6C5C89276F760E005D /* libPods-Voip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C04B00EA2F8C75CDE85F1D /* libPods-Voip.a */; };
 /* End PBXBuildFile section */
 
@@ -95,13 +106,16 @@
 		7F805391A3495B719E8B2539 /* libPods-VoipTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VoipTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48008241CD59B65BC6E7791 /* Pods-Voip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voip/Pods-Voip.release.xcconfig"; sourceTree = "<group>"; };
 		AE11C5F6173B8C2FDEFDAEF6 /* Pods-VoipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoipUITests/Pods-VoipUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B421BDD81F667F74009FE2B6 /* AppDelegate+JPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JPush.h"; sourceTree = "<group>"; };
+		B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
+		B421BDE01F668CFD009FE2B6 /* AppDelegate+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Notification.h"; sourceTree = "<group>"; };
+		B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Notification.m"; sourceTree = "<group>"; };
 		B474E4101F5E705D00300490 /* AppDelegate+NWPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+NWPusher.h"; sourceTree = "<group>"; };
 		B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+NWPusher.m"; sourceTree = "<group>"; };
 		B48555581F5CFE2C0068F4C6 /* Voip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B485555C1F5CFE2C0068F4C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B485555E1F5CFE2C0068F4C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B485555F1F5CFE2C0068F4C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B48555651F5CFE2C0068F4C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B48555681F5CFE2C0068F4C6 /* Voip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Voip.xcdatamodel; sourceTree = "<group>"; };
 		B485556A1F5CFE2C0068F4C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B485556D1F5CFE2C0068F4C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,8 +139,6 @@
 		B48555D91F5D13750068F4C6 /* CallLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallLoginViewController.m; sourceTree = "<group>"; };
 		B48555DA1F5D13750068F4C6 /* CallRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallRegisterViewController.h; sourceTree = "<group>"; };
 		B48555DB1F5D13750068F4C6 /* CallRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallRegisterViewController.m; sourceTree = "<group>"; };
-		B48555DC1F5D13750068F4C6 /* CallTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallTableViewController.h; sourceTree = "<group>"; };
-		B48555DD1F5D13750068F4C6 /* CallTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallTableViewController.m; sourceTree = "<group>"; };
 		B48555DF1F5D13750068F4C6 /* CallMultiMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallMultiMainViewController.h; sourceTree = "<group>"; };
 		B48555E01F5D13750068F4C6 /* CallMultiMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallMultiMainViewController.m; sourceTree = "<group>"; };
 		B48555E11F5D13750068F4C6 /* CallMultiMakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallMultiMakeViewController.h; sourceTree = "<group>"; };
@@ -144,6 +156,9 @@
 		B49AC9DA1F5FDD0E006E3199 /* Ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.caf; sourceTree = "<group>"; };
 		B49AC9E41F5FE28C006E3199 /* AppDelegate+NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+NotificationCenter.h"; sourceTree = "<group>"; };
 		B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+NotificationCenter.m"; sourceTree = "<group>"; };
+		B4DED8B51F669F070038827D /* C2CCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = C2CCall.storyboard; sourceTree = "<group>"; };
+		B4DED8B91F669F0E0038827D /* MultiCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiCall.storyboard; sourceTree = "<group>"; };
+		B4DED8BD1F66A03D0038827D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B68BE1C5159CF0FD44CD3E95 /* Pods-Voip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voip/Pods-Voip.debug.xcconfig"; sourceTree = "<group>"; };
 		E9C85788AF3307CD89B8DEE0 /* libPods-VoipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VoipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4822E51F2C055C48BD257C /* Pods-VoipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoipUITests/Pods-VoipUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -221,11 +236,17 @@
 				B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */,
 				B49AC9C41F5FD0A0006E3199 /* AppDelegate+PushKit.h */,
 				B49AC9C51F5FD0A0006E3199 /* AppDelegate+PushKit.m */,
+				B421BDD81F667F74009FE2B6 /* AppDelegate+JPush.h */,
+				B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */,
+				B421BDE01F668CFD009FE2B6 /* AppDelegate+Notification.h */,
+				B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */,
 				B49AC9C91F5FD4AD006E3199 /* AppDelegate+RemoteNotification.h */,
 				B49AC9CA1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m */,
 				B49AC9E41F5FE28C006E3199 /* AppDelegate+NotificationCenter.h */,
 				B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */,
-				B48555641F5CFE2C0068F4C6 /* Main.storyboard */,
+				B4DED8B91F669F0E0038827D /* MultiCall.storyboard */,
+				B4DED8B51F669F070038827D /* C2CCall.storyboard */,
+				B4DED8BD1F66A03D0038827D /* Login.storyboard */,
 				B485556A1F5CFE2C0068F4C6 /* Assets.xcassets */,
 				B485556C1F5CFE2C0068F4C6 /* LaunchScreen.storyboard */,
 				B485556F1F5CFE2C0068F4C6 /* Info.plist */,
@@ -273,8 +294,6 @@
 				B48555D91F5D13750068F4C6 /* CallLoginViewController.m */,
 				B48555DA1F5D13750068F4C6 /* CallRegisterViewController.h */,
 				B48555DB1F5D13750068F4C6 /* CallRegisterViewController.m */,
-				B48555DC1F5D13750068F4C6 /* CallTableViewController.h */,
-				B48555DD1F5D13750068F4C6 /* CallTableViewController.m */,
 				B48555CF1F5D13750068F4C6 /* C2CCall */,
 				B48555DE1F5D13750068F4C6 /* MultiCall */,
 			);
@@ -413,7 +432,8 @@
 				TargetAttributes = {
 					B48555571F5CFE2C0068F4C6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = VX3477C4M7;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -425,12 +445,14 @@
 					};
 					B48555731F5CFE2C0068F4C6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = VX3477C4M7;
+						ProvisioningStyle = Automatic;
 						TestTargetID = B48555571F5CFE2C0068F4C6;
 					};
 					B485557E1F5CFE2C0068F4C6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = VX3477C4M7;
+						ProvisioningStyle = Automatic;
 						TestTargetID = B48555571F5CFE2C0068F4C6;
 					};
 				};
@@ -462,10 +484,12 @@
 			files = (
 				B49AC9DB1F5FDD0E006E3199 /* icon_test.png in Resources */,
 				B485556E1F5CFE2C0068F4C6 /* LaunchScreen.storyboard in Resources */,
+				B4DED8BA1F669F0E0038827D /* MultiCall.storyboard in Resources */,
 				B485556B1F5CFE2C0068F4C6 /* Assets.xcassets in Resources */,
-				B48555661F5CFE2C0068F4C6 /* Main.storyboard in Resources */,
 				B49AC9E11F5FDD0E006E3199 /* Ringtone.caf in Resources */,
 				B49AC9DE1F5FDD0E006E3199 /* image_test.jpg in Resources */,
+				B4DED8B61F669F070038827D /* C2CCall.storyboard in Resources */,
+				B4DED8BE1F66A03D0038827D /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +498,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49AC9DC1F5FDD0E006E3199 /* icon_test.png in Resources */,
+				B4DED8B71F669F070038827D /* C2CCall.storyboard in Resources */,
+				B4DED8BF1F66A03D0038827D /* Login.storyboard in Resources */,
 				B49AC9E21F5FDD0E006E3199 /* Ringtone.caf in Resources */,
+				B4DED8BB1F669F0E0038827D /* MultiCall.storyboard in Resources */,
 				B49AC9DF1F5FDD0E006E3199 /* image_test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +511,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49AC9DD1F5FDD0E006E3199 /* icon_test.png in Resources */,
+				B4DED8B81F669F070038827D /* C2CCall.storyboard in Resources */,
+				B4DED8C01F66A03D0038827D /* Login.storyboard in Resources */,
 				B49AC9E31F5FDD0E006E3199 /* Ringtone.caf in Resources */,
+				B4DED8BC1F669F0E0038827D /* MultiCall.storyboard in Resources */,
 				B49AC9E01F5FDD0E006E3199 /* image_test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,7 +529,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Voip/Pods-Voip-resources.sh",
-				"${PODS_ROOT}/../CallSDK/QAVEffect/Sources",
+				"${PODS_ROOT}/../CallSDK/ILiveSDK/Sources/TILFilterResource.bundle",
+				"${PODS_ROOT}/../CallSDK/QAVEffect/Sources/DecoRes.bundle",
+				"${PODS_ROOT}/../CallSDK/QAVEffect/Sources/FilterRes.bundle",
+				"${PODS_ROOT}/../CallSDK/QAVEffect/Sources/QAVEffectRes.bundle",
+				"${PODS_ROOT}/../CallSDK/QAVEffect/Sources/PE.dat",
 				"${PODS_ROOT}/../SDKVersion/Sources/SDKVersionView.xib",
 				"${PODS_ROOT}/../SDKVersion/Sources/SDKVersionViewController.xib",
 			);
@@ -654,15 +688,16 @@
 				B48555EB1F5D13750068F4C6 /* CallC2CRecvViewController.m in Sources */,
 				B48555F11F5D13750068F4C6 /* CallLoginViewController.m in Sources */,
 				B485555D1F5CFE2C0068F4C6 /* main.m in Sources */,
-				B48555F71F5D13750068F4C6 /* CallTableViewController.m in Sources */,
 				B48555691F5CFE2C0068F4C6 /* Voip.xcdatamodeld in Sources */,
 				B48555F41F5D13750068F4C6 /* CallRegisterViewController.m in Sources */,
 				B48556001F5D13750068F4C6 /* CallMultiRecvViewController.m in Sources */,
 				B49AC9CB1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m in Sources */,
+				B421BDE21F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */,
 				B474E4121F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */,
 				B49AC9E61F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */,
 				B48555FD1F5D13750068F4C6 /* CallMultiMakeViewController.m in Sources */,
 				B48555E81F5D13750068F4C6 /* CallC2CMakeViewController.m in Sources */,
+				B421BDDA1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */,
 				B49AC9C61F5FD0A0006E3199 /* AppDelegate+PushKit.m in Sources */,
 				B48555EE1F5D13750068F4C6 /* CallIncomingListener.m in Sources */,
 			);
@@ -684,9 +719,10 @@
 				B48555F51F5D13750068F4C6 /* CallRegisterViewController.m in Sources */,
 				B48555791F5CFE2C0068F4C6 /* VoipTests.m in Sources */,
 				B48555F21F5D13750068F4C6 /* CallLoginViewController.m in Sources */,
+				B421BDE31F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */,
 				B48555FB1F5D13750068F4C6 /* CallMultiMainViewController.m in Sources */,
 				B48555E91F5D13750068F4C6 /* CallC2CMakeViewController.m in Sources */,
-				B48555F81F5D13750068F4C6 /* CallTableViewController.m in Sources */,
+				B421BDDB1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,9 +742,10 @@
 				B48555F61F5D13750068F4C6 /* CallRegisterViewController.m in Sources */,
 				B48555841F5CFE2D0068F4C6 /* VoipUITests.m in Sources */,
 				B48555F31F5D13750068F4C6 /* CallLoginViewController.m in Sources */,
+				B421BDE41F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */,
 				B48555FC1F5D13750068F4C6 /* CallMultiMainViewController.m in Sources */,
 				B48555EA1F5D13750068F4C6 /* CallC2CMakeViewController.m in Sources */,
-				B48555F91F5D13750068F4C6 /* CallTableViewController.m in Sources */,
+				B421BDDC1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,14 +765,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B48555641F5CFE2C0068F4C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B48555651F5CFE2C0068F4C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B485556C1F5CFE2C0068F4C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -847,7 +876,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Voip/Voip.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -872,7 +901,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Voip/Voip.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -895,7 +924,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -918,7 +947,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -939,7 +968,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF4822E51F2C055C48BD257C /* Pods-VoipUITests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",
@@ -960,7 +990,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE11C5F6173B8C2FDEFDAEF6 /* Pods-VoipUITests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = VX3477C4M7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Voip/CallSDK/AVSDK",

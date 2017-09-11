@@ -8,10 +8,9 @@
 
 #import "AppDelegate+PushKit.h"
 #import <PushKit/PushKit.h>
-#import <Utility/Constant.h>
-#import <JPush/JPUSHService.h>
-#import <UserNotifications/UserNotifications.h>
-#import <CoreLocation/CoreLocation.h>
+#import <Utility/Utility.h>
+#import "AppDelegate+JPush.h"
+#import "AppDelegate+Notification.h"
 #import "AppDelegate+NotificationCenter.h"
 
 @interface AppDelegate (_PushKit_) <PKPushRegistryDelegate>
@@ -29,14 +28,13 @@
 #pragma mark - PKPushRegistryDelegate
 - (void)pushRegistry:(PKPushRegistry *)registry didUpdatePushCredentials:(PKPushCredentials *)credentials forType:(PKPushType)type
 {
-    NSLog(@"PushKit Token:%@",NSStrinWithHexFormatFromData(credentials.token));
-    //9418CACB8216173D589057266C722DEA1BC7F3EC96DAFE440FCB62A51B6BAC52
-    NSString *tokenDescription = [NSString stringWithFormat:@"\nPushKit Token:%@",NSStrinWithHexFormatFromData(credentials.token)];
+    NSString *tokenDescription = [NSString stringWithFormat:@"\nPushKit Token:%@",credentials.token.hexString];
+    NSLog(@"tokenDescription: %@",tokenDescription);
     if ([UIPasteboard generalPasteboard].string.length > 0) {
         [UIPasteboard generalPasteboard].string = [[UIPasteboard generalPasteboard].string stringByAppendingString:@"\n"];
     }
     [UIPasteboard generalPasteboard].string = [[UIPasteboard generalPasteboard].string stringByAppendingFormat:@"%@",tokenDescription];
-    [JPUSHService registerDeviceToken:credentials.token];
+    [self jpushRegisterDeviceToken:credentials.token];
 }
 - (void)pushRegistry:(PKPushRegistry *)registry didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(PKPushType)type
 {
@@ -58,7 +56,7 @@
     if (!sound) {
         sound = @"test.caf";
     }
-    [self scheduledLocalNotificationWithTitle:@"my title" subTitle:@"my subtitle" body:alertBody sound:sound badge:0 category:@"" userInfo:payload.dictionaryPayload];
+    [self scheduledLocalNotificationWithTitle:@"my title" subTitle:@"my subtitle" body:alertBody sound:sound badge:0 category:kNotificationInputCategoryIdentifier userInfo:payload.dictionaryPayload];
 }
 - (void)pushRegistry:(PKPushRegistry *)registry didInvalidatePushTokenForType:(PKPushType)type
 {

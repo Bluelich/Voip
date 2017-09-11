@@ -12,10 +12,12 @@
 {
     CGFloat kScreenWidth;
     CGFloat kScreenHeight;
+    BOOL    constraintsHasBeenLoaded;
 }
 @property (nonatomic,assign)CGPoint  currentPoint;
-@property (nonatomic,strong)NSLayoutConstraint *top;
-@property (nonatomic,strong)NSLayoutConstraint *leading;
+@property (nonatomic,strong)NSLayoutConstraint *topConstraint;
+@property (nonatomic,strong)NSLayoutConstraint *leadingConstraint;
+@property (atomic   ,assign)BOOL  constraintsHasBeenLoaded;
 @end
 
 @implementation MoveAbleView
@@ -30,21 +32,37 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    if (self.constraintsHasBeenLoaded) {
+        return;
+    }
+    self.constraintsHasBeenLoaded = YES;
+    CGFloat leading = CGRectGetMinX(self.frame);
+    CGFloat top = CGRectGetMinY(self.frame);
+    CGFloat width = CGRectGetWidth(self.frame);
+    CGFloat height = CGRectGetHeight(self.frame);
+    NSMutableArray<__kindof NSLayoutConstraint *> *constraints = @[].mutableCopy;
     [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.firstItem == self) {
-            NSLog(@"");
-            switch (obj.firstAttribute) {
-                case NSLayoutAttributeTop:
-                    self.top = obj;
-                    break;
-                case NSLayoutAttributeLeading:
-                    self.leading = obj;
-                    break;
-                default:
-                    break;
-            }
+        if (obj.firstItem == self || obj.secondItem == self){
+            NSLayoutConstraint *constant = [NSLayoutConstraint constraintWithItem:obj.firstItem attribute:obj.firstAttribute relatedBy:obj.relation toItem:obj.secondItem attribute:obj.secondAttribute multiplier:obj.multiplier constant:obj.constant];
+            constant.priority = obj.priority - 1;
+            constant.shouldBeArchived = obj.shouldBeArchived;            
+            [constraints addObject:constant];
+            obj.active = NO;
         }
     }];
+    [NSLayoutConstraint activateConstraints:constraints];
+    self.topConstraint     = [self.topAnchor     constraintEqualToAnchor:self.superview.topAnchor     constant:top];
+    self.topConstraint.priority = UILayoutPriorityRequired;
+    self.leadingConstraint = [self.leadingAnchor constraintEqualToAnchor:self.superview.leadingAnchor constant:leading];
+    self.leadingConstraint.priority = UILayoutPriorityRequired;
+    NSLayoutConstraint *widthConstraint = [self.widthAnchor constraintEqualToConstant:width];
+    widthConstraint.priority = UILayoutPriorityRequired;
+    NSLayoutConstraint *heightConstraint = [self.widthAnchor constraintEqualToConstant:width];
+    heightConstraint.priority = UILayoutPriorityRequired;
+    [NSLayoutConstraint activateConstraints:@[self.topConstraint,
+                                              self.leadingConstraint,
+                                              widthConstraint,
+                                              heightConstraint]];
 }
 #pragma mark - touches
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -102,8 +120,8 @@
 }
 - (void)updateWithTargetFrame:(CGRect)frame animated:(BOOL)animated
 {
-    self.top.constant = CGRectGetMinY(frame);
-    self.leading.constant = CGRectGetMinX(frame);
+    self.topConstraint.constant = CGRectGetMinY(frame);
+    self.leadingConstraint.constant = CGRectGetMinX(frame);
     [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
         [self.superview layoutIfNeeded];
     }];

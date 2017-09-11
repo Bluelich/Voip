@@ -39,6 +39,7 @@
     }
     CallC2CMakeViewController *make = [self.storyboard instantiateViewControllerWithIdentifier:@"CallC2CMakeViewController"];
     make.peerId = peerId;
+    make.callType = self.callTypeSegmentControl.selectedSegmentIndex == 0 ? TILCALL_TYPE_AUDIO : TILCALL_TYPE_VIDEO;
     [self presentViewController:make animated:YES completion:nil];
 }
 

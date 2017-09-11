@@ -11,7 +11,7 @@
 
 @interface SDKVersionViewController ()
 
-@property (unsafe_unretained, nonatomic) IBOutlet SDKVersionView *versionView;
+@property (weak, nonatomic) IBOutlet SDKVersionView *versionView;
 
 @end
 

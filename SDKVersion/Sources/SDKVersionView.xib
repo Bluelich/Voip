@@ -85,7 +85,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="callSDK_VersionLabel" destination="6ow-Hn-k9g" id="dt5-fJ-ZBl"/>
+                <outlet property="callSDK_VersionLabel" destination="Oze-nV-Aru" id="vbc-Wz-gsb"/>
                 <outlet property="iLive_VersionLabel" destination="RfC-AU-gmz" id="n9Q-61-BO0"/>
                 <outlet property="imSDK__VersionLabel" destination="cY8-Ep-XVW" id="vQP-WY-3Ib"/>
                 <outlet property="qavSDK_VersionLabel" destination="6ow-Hn-k9g" id="in1-ms-byJ"/>

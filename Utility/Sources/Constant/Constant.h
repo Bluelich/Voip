@@ -12,10 +12,5 @@ FOUNDATION_EXPORT int kCallAppID;
 FOUNDATION_EXPORT int kAccountType;
 FOUNDATION_EXPORT NSString *kMasterSecret;
 FOUNDATION_EXPORT NSString *kJPUSHKey;
+FOUNDATION_EXPORT NSString *kJPUSHChannel;
 FOUNDATION_EXPORT NSString *kChannel;
-
-FOUNDATION_EXPORT NSString *NSStrinWithHexFormatFromData(NSData *token);
-
-@interface Constant : NSObject
-
-@end

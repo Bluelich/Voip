@@ -72,11 +72,13 @@
     [[ILiveLoginManager getInstance] tlsLogin:self.name pwd:self.pwd succ:^{
         [ws setUserDefault];
         if(ws.segmentControl.selectedSegmentIndex == 0){
-            CallC2CMainViewController *call = [ws.storyboard instantiateViewControllerWithIdentifier:@"CallC2CMainViewController"];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"C2CCall" bundle:nil];
+            CallC2CMainViewController *call = [storyboard instantiateViewControllerWithIdentifier:@"CallC2CMainViewController"];
             [ws.navigationController pushViewController:call animated:YES];
         }
         else{
-            CallMultiMainViewController *call = [ws.storyboard instantiateViewControllerWithIdentifier:@"CallMultiMainViewController"];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MultiCall" bundle:nil];
+            CallMultiMainViewController *call = [storyboard instantiateViewControllerWithIdentifier:@"CallMultiMainViewController"];
             [ws.navigationController pushViewController:call animated:YES];
         }
     } failed:^(NSString *moudle, int errId, NSString *errMsg) {

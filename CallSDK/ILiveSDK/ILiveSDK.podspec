@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
   spec.source       = { :git => "", :tag => spec.version.to_s }
   spec.ios.vendored_frameworks = 'Sources/*.framework'
-  # s.resources = "Resources/*.png"
+  spec.resource     = "Sources/*.bundle"
   spec.frameworks   = "Security", 
             "Foundation",
             "UIKit",

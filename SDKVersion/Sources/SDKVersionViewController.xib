@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-YH-pJf" customClass="SDKVersionView">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
+                    <rect key="frame" x="0.0" y="547" width="300" height="120"/>
                     <color key="backgroundColor" red="0.81600591404183864" green="0.81600591404183864" blue="0.81600591404183864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="4cw-A6-ADN"/>
@@ -30,8 +30,8 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Isr-YH-pJf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Da-aV-3Xe"/>
-                <constraint firstItem="Isr-YH-pJf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f6U-dL-ptY"/>
+                <constraint firstAttribute="bottom" secondItem="Isr-YH-pJf" secondAttribute="bottom" id="ARG-aa-0kv"/>
+                <constraint firstItem="Isr-YH-pJf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fj9-Xr-c9W"/>
             </constraints>
         </view>
     </objects>

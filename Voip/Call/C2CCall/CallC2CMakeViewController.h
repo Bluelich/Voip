@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TILCallSDK/TILCallTypeDefine.h>
 
 @interface CallC2CMakeViewController : UIViewController
 @property (strong, nonatomic) NSString *peerId;
+@property (nonatomic,assign)TILCallType  callType;
 - (IBAction)closeCamera:(id)sender;
 - (IBAction)switchCamera:(id)sender;
 - (IBAction)closeMic:(id)sender;

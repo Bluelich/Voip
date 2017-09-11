@@ -11,6 +11,7 @@
 @interface CallC2CMainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UITextField *peerTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *callTypeSegmentControl;
 @property (weak, nonatomic) IBOutlet UILabel *errLabel;
 - (IBAction)makeCall:(id)sender;
 - (IBAction)logout:(id)sender;

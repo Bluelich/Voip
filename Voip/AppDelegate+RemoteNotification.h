@@ -10,6 +10,6 @@
 
 @interface AppDelegate (RemoteNotification)
 
-- (void)remoteNotificationRegistration;
+- (void)handleRemoteNotification:(NSDictionary *)remoteInfo;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "NSObject+BLIntrospection.h"
 #import <objc/runtime.h>
-#import "YYKit.h"
 
 #pragma mark - NSString
 @interface NSString (BLIntrospection)
