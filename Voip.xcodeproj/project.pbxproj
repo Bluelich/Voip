@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AF76E341F66E32D0016FE67 /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF76E331F66E32D0016FE67 /* C2CCall.storyboard */; };
+		2AF76E351F66E32D0016FE67 /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF76E331F66E32D0016FE67 /* C2CCall.storyboard */; };
+		2AF76E361F66E32D0016FE67 /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF76E331F66E32D0016FE67 /* C2CCall.storyboard */; };
+		2AF76E381F66E3390016FE67 /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF76E371F66E3390016FE67 /* MultiCall.storyboard */; };
+		2AF76E391F66E3390016FE67 /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF76E371F66E3390016FE67 /* MultiCall.storyboard */; };
+		2AF76E3A1F66E3390016FE67 /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AF76E371F66E3390016FE67 /* MultiCall.storyboard */; };
 		918AF48891F87E14C69E519E /* libPods-VoipTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F805391A3495B719E8B2539 /* libPods-VoipTests.a */; };
 		AA046299BF0FD89525CC7CF4 /* libPods-VoipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C85788AF3307CD89B8DEE0 /* libPods-VoipUITests.a */; };
 		B421BDDA1F667F74009FE2B6 /* AppDelegate+JPush.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */; };
@@ -70,12 +76,6 @@
 		B49AC9E61F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */; };
 		B49AC9E71F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */; };
 		B49AC9E81F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */; };
-		B4DED8B61F669F070038827D /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B51F669F070038827D /* C2CCall.storyboard */; };
-		B4DED8B71F669F070038827D /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B51F669F070038827D /* C2CCall.storyboard */; };
-		B4DED8B81F669F070038827D /* C2CCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B51F669F070038827D /* C2CCall.storyboard */; };
-		B4DED8BA1F669F0E0038827D /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B91F669F0E0038827D /* MultiCall.storyboard */; };
-		B4DED8BB1F669F0E0038827D /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B91F669F0E0038827D /* MultiCall.storyboard */; };
-		B4DED8BC1F669F0E0038827D /* MultiCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8B91F669F0E0038827D /* MultiCall.storyboard */; };
 		B4DED8BE1F66A03D0038827D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8BD1F66A03D0038827D /* Login.storyboard */; };
 		B4DED8BF1F66A03D0038827D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8BD1F66A03D0038827D /* Login.storyboard */; };
 		B4DED8C01F66A03D0038827D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4DED8BD1F66A03D0038827D /* Login.storyboard */; };
@@ -101,6 +101,8 @@
 
 /* Begin PBXFileReference section */
 		0C0C551FCB1D2A11A78EC723 /* Pods-VoipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoipTests/Pods-VoipTests.release.xcconfig"; sourceTree = "<group>"; };
+		2AF76E331F66E32D0016FE67 /* C2CCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = C2CCall.storyboard; sourceTree = "<group>"; };
+		2AF76E371F66E3390016FE67 /* MultiCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiCall.storyboard; sourceTree = "<group>"; };
 		61D372F44606367746041921 /* Pods-VoipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoipTests/Pods-VoipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67C04B00EA2F8C75CDE85F1D /* libPods-Voip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Voip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F805391A3495B719E8B2539 /* libPods-VoipTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VoipTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,8 +158,6 @@
 		B49AC9DA1F5FDD0E006E3199 /* Ringtone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.caf; sourceTree = "<group>"; };
 		B49AC9E41F5FE28C006E3199 /* AppDelegate+NotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+NotificationCenter.h"; sourceTree = "<group>"; };
 		B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+NotificationCenter.m"; sourceTree = "<group>"; };
-		B4DED8B51F669F070038827D /* C2CCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = C2CCall.storyboard; sourceTree = "<group>"; };
-		B4DED8B91F669F0E0038827D /* MultiCall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiCall.storyboard; sourceTree = "<group>"; };
 		B4DED8BD1F66A03D0038827D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B68BE1C5159CF0FD44CD3E95 /* Pods-Voip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voip/Pods-Voip.debug.xcconfig"; sourceTree = "<group>"; };
 		E9C85788AF3307CD89B8DEE0 /* libPods-VoipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VoipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,10 +244,8 @@
 				B49AC9CA1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m */,
 				B49AC9E41F5FE28C006E3199 /* AppDelegate+NotificationCenter.h */,
 				B49AC9E51F5FE28C006E3199 /* AppDelegate+NotificationCenter.m */,
-				B4DED8B91F669F0E0038827D /* MultiCall.storyboard */,
-				B4DED8B51F669F070038827D /* C2CCall.storyboard */,
-				B4DED8BD1F66A03D0038827D /* Login.storyboard */,
 				B485556A1F5CFE2C0068F4C6 /* Assets.xcassets */,
+				B4DED8BD1F66A03D0038827D /* Login.storyboard */,
 				B485556C1F5CFE2C0068F4C6 /* LaunchScreen.storyboard */,
 				B485556F1F5CFE2C0068F4C6 /* Info.plist */,
 				B48555671F5CFE2C0068F4C6 /* Voip.xcdatamodeld */,
@@ -309,6 +307,7 @@
 				B48555D31F5D13750068F4C6 /* CallC2CMakeViewController.m */,
 				B48555D41F5D13750068F4C6 /* CallC2CRecvViewController.h */,
 				B48555D51F5D13750068F4C6 /* CallC2CRecvViewController.m */,
+				2AF76E331F66E32D0016FE67 /* C2CCall.storyboard */,
 			);
 			path = C2CCall;
 			sourceTree = "<group>";
@@ -322,6 +321,7 @@
 				B48555E21F5D13750068F4C6 /* CallMultiMakeViewController.m */,
 				B48555E31F5D13750068F4C6 /* CallMultiRecvViewController.h */,
 				B48555E41F5D13750068F4C6 /* CallMultiRecvViewController.m */,
+				2AF76E371F66E3390016FE67 /* MultiCall.storyboard */,
 			);
 			path = MultiCall;
 			sourceTree = "<group>";
@@ -484,12 +484,12 @@
 			files = (
 				B49AC9DB1F5FDD0E006E3199 /* icon_test.png in Resources */,
 				B485556E1F5CFE2C0068F4C6 /* LaunchScreen.storyboard in Resources */,
-				B4DED8BA1F669F0E0038827D /* MultiCall.storyboard in Resources */,
+				2AF76E381F66E3390016FE67 /* MultiCall.storyboard in Resources */,
 				B485556B1F5CFE2C0068F4C6 /* Assets.xcassets in Resources */,
 				B49AC9E11F5FDD0E006E3199 /* Ringtone.caf in Resources */,
 				B49AC9DE1F5FDD0E006E3199 /* image_test.jpg in Resources */,
-				B4DED8B61F669F070038827D /* C2CCall.storyboard in Resources */,
 				B4DED8BE1F66A03D0038827D /* Login.storyboard in Resources */,
+				2AF76E341F66E32D0016FE67 /* C2CCall.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,11 +497,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF76E391F66E3390016FE67 /* MultiCall.storyboard in Resources */,
 				B49AC9DC1F5FDD0E006E3199 /* icon_test.png in Resources */,
-				B4DED8B71F669F070038827D /* C2CCall.storyboard in Resources */,
 				B4DED8BF1F66A03D0038827D /* Login.storyboard in Resources */,
+				2AF76E351F66E32D0016FE67 /* C2CCall.storyboard in Resources */,
 				B49AC9E21F5FDD0E006E3199 /* Ringtone.caf in Resources */,
-				B4DED8BB1F669F0E0038827D /* MultiCall.storyboard in Resources */,
 				B49AC9DF1F5FDD0E006E3199 /* image_test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,11 +510,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF76E3A1F66E3390016FE67 /* MultiCall.storyboard in Resources */,
 				B49AC9DD1F5FDD0E006E3199 /* icon_test.png in Resources */,
-				B4DED8B81F669F070038827D /* C2CCall.storyboard in Resources */,
 				B4DED8C01F66A03D0038827D /* Login.storyboard in Resources */,
+				2AF76E361F66E32D0016FE67 /* C2CCall.storyboard in Resources */,
 				B49AC9E31F5FDD0E006E3199 /* Ringtone.caf in Resources */,
-				B4DED8BC1F669F0E0038827D /* MultiCall.storyboard in Resources */,
 				B49AC9E01F5FDD0E006E3199 /* image_test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

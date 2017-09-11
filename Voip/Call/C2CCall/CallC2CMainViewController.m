@@ -33,14 +33,23 @@
 
 //发起呼叫
 - (IBAction)makeCall:(id)sender {
+#if TARGET_IPHONE_SIMULATOR //模拟器
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"模拟器无法拨号" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+#elif TARGET_OS_IPHONE //真机
     NSString *peerId = self.peerTextField.text;
     if(peerId.length <= 0){
+        return;
+    }
+    if ([UIDevice currentDevice].isAccessibilityElement) {
         return;
     }
     CallC2CMakeViewController *make = [self.storyboard instantiateViewControllerWithIdentifier:@"CallC2CMakeViewController"];
     make.peerId = peerId;
     make.callType = self.callTypeSegmentControl.selectedSegmentIndex == 0 ? TILCALL_TYPE_AUDIO : TILCALL_TYPE_VIDEO;
     [self presentViewController:make animated:YES completion:nil];
+#endif
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

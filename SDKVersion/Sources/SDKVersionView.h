@@ -9,8 +9,5 @@
 #import "MoveAbleView.h"
 
 @interface SDKVersionView : MoveAbleView
-
-+ (instancetype)loadViewFromNib;
 - (void)setVersionInfo;
-
 @end

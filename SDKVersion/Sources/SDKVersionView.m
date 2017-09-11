@@ -13,6 +13,7 @@
 #import <TILCallSDK/TILCallSDK.h>
 
 @interface SDKVersionView ()
+
 @property (weak, nonatomic) IBOutlet UILabel *iLive_VersionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *callSDK_VersionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *qavSDK_VersionLabel;
@@ -41,6 +42,16 @@
 {
     UIView *realView = [[UINib nibWithNibName:NSStringFromClass(self) bundle:nil] instantiateWithOwner:nil options:nil].lastObject;
     realView.tag = view.tag;
+    realView.semanticContentAttribute = view.semanticContentAttribute;
+    realView.multipleTouchEnabled = view.multipleTouchEnabled;
+    realView.alpha = view.alpha;
+    realView.tintColor = view.tintColor;
+    realView.opaque = view.opaque;
+    realView.clearsContextBeforeDrawing = view.clearsContextBeforeDrawing;
+    realView.autoresizesSubviews = view.autoresizesSubviews;
+    realView.autoresizingMask = view.autoresizingMask;
+    realView.contentScaleFactor = view.contentScaleFactor;
+    realView.contentStretch = view.contentStretch;
     realView.frame = view.frame;
     realView.bounds = view.bounds;
     realView.hidden = view.hidden;
