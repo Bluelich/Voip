@@ -27,9 +27,10 @@
 }
 - (void)onC2CCallInvitation:(TILCallInvitation *)invitation
 {
-    UINavigationController *nav = (UINavigationController*)[UIApplication sharedApplication].delegate.window.rootViewController;
-    CallC2CRecvViewController *call = [nav.storyboard instantiateViewControllerWithIdentifier:@"CallC2CRecvViewController"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"C2CCall" bundle:nil];
+    CallC2CRecvViewController *call = [storyboard instantiateViewControllerWithIdentifier:@"CallC2CRecvViewController"];
     call.invite = invitation;
+    UINavigationController *nav = (UINavigationController*)[UIApplication sharedApplication].delegate.window.rootViewController;
     [nav presentViewController:call animated:YES completion:nil];
 }
 
@@ -48,9 +49,10 @@
 //    config.responderConfig = responderConfig;
 //    TILMultiCall *call = [[TILMultiCall alloc] initWithConfig:config];
 //    [call responseLineBusy:nil];
-    UINavigationController *nav = (UINavigationController*)[UIApplication sharedApplication].delegate.window.rootViewController;
-    CallMultiRecvViewController *call = [nav.storyboard instantiateViewControllerWithIdentifier:@"CallMultiRecvViewController"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MultiCall" bundle:nil];
+    CallMultiRecvViewController *call = [storyboard instantiateViewControllerWithIdentifier:@"CallMultiRecvViewController"];
     call.invite = invitation;
+    UINavigationController *nav = (UINavigationController*)[UIApplication sharedApplication].delegate.window.rootViewController;
     [nav presentViewController:call animated:YES completion:nil];
 }
 

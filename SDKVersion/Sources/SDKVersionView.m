@@ -41,32 +41,34 @@
 + (UIView *)instantiateRealViewFromPlaceholder:(UIView *)view
 {
     UIView *realView = [[UINib nibWithNibName:NSStringFromClass(self) bundle:nil] instantiateWithOwner:nil options:nil].lastObject;
-    realView.tag = view.tag;
-    realView.semanticContentAttribute = view.semanticContentAttribute;
-    realView.multipleTouchEnabled = view.multipleTouchEnabled;
-    realView.alpha = view.alpha;
-    realView.tintColor = view.tintColor;
-    realView.opaque = view.opaque;
-    realView.clearsContextBeforeDrawing = view.clearsContextBeforeDrawing;
-    realView.autoresizesSubviews = view.autoresizesSubviews;
-    realView.autoresizingMask = view.autoresizingMask;
-    realView.contentScaleFactor = view.contentScaleFactor;
-    realView.contentStretch = view.contentStretch;
-    realView.frame = view.frame;
-    realView.bounds = view.bounds;
-    realView.hidden = view.hidden;
-    realView.contentMode = view.contentMode;
-    realView.backgroundColor = view.backgroundColor;
-    realView.clipsToBounds = view.clipsToBounds;
-    realView.autoresizingMask = view.autoresizingMask;
-    realView.userInteractionEnabled = view.userInteractionEnabled;
-    realView.translatesAutoresizingMaskIntoConstraints = view.translatesAutoresizingMaskIntoConstraints;
+    {
+        //Copy properties
+        realView.tag = view.tag;
+        realView.frame = view.frame;
+        realView.alpha = view.alpha;
+        realView.opaque = view.opaque;
+        realView.hidden = view.hidden;
+        realView.bounds = view.bounds;
+        realView.tintColor = view.tintColor;
+        realView.contentMode = view.contentMode;
+        realView.clipsToBounds = view.clipsToBounds;
+        realView.contentStretch = view.contentStretch;
+        realView.backgroundColor = view.backgroundColor;
+        realView.autoresizingMask = view.autoresizingMask;
+        realView.contentScaleFactor = view.contentScaleFactor;
+        realView.autoresizesSubviews = view.autoresizesSubviews;
+        realView.multipleTouchEnabled = view.multipleTouchEnabled;
+        realView.userInteractionEnabled = view.userInteractionEnabled;
+        realView.semanticContentAttribute = view.semanticContentAttribute;
+        realView.clearsContextBeforeDrawing = view.clearsContextBeforeDrawing;
+        realView.translatesAutoresizingMaskIntoConstraints = view.translatesAutoresizingMaskIntoConstraints;
+    }
     if (view.constraints.count == 0) {
         return realView;
     }
     // Copy autolayout constrains.
-    // Fix crash when using 2.3.1 in UICollectionViews or similar
     dispatch_async(dispatch_get_main_queue(), ^{
+        // Fix crash when using 2.3.1 in UICollectionViews or similar
         (void)view;
     });
     // We only need to copy "self" constraints (like width/height constraints) from placeholder to real view

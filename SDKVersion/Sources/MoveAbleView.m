@@ -40,17 +40,20 @@
     CGFloat top = CGRectGetMinY(self.frame);
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
-    NSMutableArray<__kindof NSLayoutConstraint *> *constraints = @[].mutableCopy;
-    [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.firstItem == self || obj.secondItem == self){
-            NSLayoutConstraint *constant = [NSLayoutConstraint constraintWithItem:obj.firstItem attribute:obj.firstAttribute relatedBy:obj.relation toItem:obj.secondItem attribute:obj.secondAttribute multiplier:obj.multiplier constant:obj.constant];
-            constant.priority = obj.priority - 1;
-            constant.shouldBeArchived = obj.shouldBeArchived;            
-            [constraints addObject:constant];
-            obj.active = NO;
-        }
-    }];
-    [NSLayoutConstraint activateConstraints:constraints];
+    {
+        //Modify constant priority
+        NSMutableArray<__kindof NSLayoutConstraint *> *constraints = @[].mutableCopy;
+        [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.firstItem == self || obj.secondItem == self){
+                NSLayoutConstraint *constant = [NSLayoutConstraint constraintWithItem:obj.firstItem attribute:obj.firstAttribute relatedBy:obj.relation toItem:obj.secondItem attribute:obj.secondAttribute multiplier:obj.multiplier constant:obj.constant];
+                constant.priority = obj.priority - 1;
+                constant.shouldBeArchived = obj.shouldBeArchived;
+                [constraints addObject:constant];
+                obj.active = NO;
+            }
+        }];
+        [NSLayoutConstraint activateConstraints:constraints];
+    }
     self.topConstraint     = [self.topAnchor     constraintEqualToAnchor:self.superview.topAnchor     constant:top];
     self.topConstraint.priority = UILayoutPriorityRequired;
     self.leadingConstraint = [self.leadingAnchor constraintEqualToAnchor:self.superview.leadingAnchor constant:leading];

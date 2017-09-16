@@ -23,6 +23,7 @@
 #import <ILiveSDK/ILiveLoginManager.h>
 #import "CallLoginViewController.h"
 #import "SDKVersionWindow.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface AppDelegate ()<NSURLSessionDelegate>
 
@@ -46,6 +47,10 @@
     [self voipRegistration];
     //登录账户
     [self callLogin];
+//    [MPRemoteCommandCenter.sharedCommandCenter.playCommand addTarget:self action:NSSelectorFromString(@"sel")];
+//    [MPRemoteCommandCenter.sharedCommandCenter.playCommand addTargetWithHandler:^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
+//        return MPRemoteCommandHandlerStatusSuccess;
+//    }];
     return YES;
 }
 #pragma mark - Call

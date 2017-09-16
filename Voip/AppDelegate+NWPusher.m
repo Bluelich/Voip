@@ -10,7 +10,7 @@
 #import <NWPusher/NWPusher.h>
 #import <NWPusher/NWPushFeedback.h>
 
-@interface AppDelegate ()
+@interface AppDelegate (__NWPusher__)
 
 @property (nonatomic,strong)NWPusher *pusher;
 
@@ -37,8 +37,7 @@
     NSString *payload = @"{\"aps\":{\"alert\":\"Testing..\"}}";
     NSString *token = @"0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
     NSError *error = nil;
-    BOOL pushed = [self.pusher pushPayload:payload token:token identifier:rand() error:&error];
-    if (pushed) {
+    if ([self.pusher pushPayload:payload token:token identifier:rand() error:&error]) {
         NSLog(@"Pushed to APNs");
     } else {
         NSLog(@"Unable to push: %@", error);
