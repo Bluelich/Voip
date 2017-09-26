@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '9.0'
 inhibit_all_warnings!
 
 target 'Voip' do
@@ -14,6 +14,7 @@ target 'Voip' do
   pod 'IMSDK',          :path => './CallSDK/IMSDK/'
   pod 'QAVEffect',      :path => './CallSDK/QAVEffect/'
   pod 'TILCallSDK',     :path => './CallSDK/TILCallSDK/'
+  pod 'GoogleWebRTC',   :path => './GoogleWebRTC'
   pod 'JPush',          '~> 3.0.6'
   pod 'NWPusher',       '~> 0.7.0'
   pod 'YYModel',        '~> 1.0.4'
