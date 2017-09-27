@@ -26,7 +26,8 @@ Pod::Spec.new do |spec|
 					  "Accelerate",
 					  "VideoToolbox",
 					  "CoreVideo",
-					  "AVFoundation"
+					  "AVFoundation",
+					  "OpenAL"
   spec.libraries    = "stdc++.6", 
 					  "c++", 
 					  "bz2",
