@@ -10,6 +10,6 @@
 
 @interface NSData (Utility)
 
-- (NSString *)hexString;;
+- (NSString *)hexString;
 
 @end

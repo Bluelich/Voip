@@ -44,7 +44,7 @@
     //注册通知
     [self notificationRegistrationWithLaunchOptions:launchOptions];
     //注册Voip
-//    [self voipRegistration];
+    [self voipRegistration];
     //登录账户
     [self callLogin];
 //    [MPRemoteCommandCenter.sharedCommandCenter.playCommand addTarget:self action:NSSelectorFromString(@"sel")];

@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "AVSDK"
-  spec.version      = "1.9.2.17.28736"
+  spec.version      = "1.9.5.925"
   spec.summary      = "Handle some data."
   spec.description  = <<-DESC
                     Handle the data.
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Bluelich" => "bluelich@qq.com" }
   spec.platform     = :ios, "8.0"
   spec.requires_arc = true
-  spec.source       = { :git => "", :tag => '1.9.2.17.OpenSDK_1.9.2- 28736' }
+  spec.source       = { :path => "./Sources" }
   spec.ios.vendored_frameworks = 'Sources/*.framework'
   # s.resources = "Resources/*.png"
   spec.frameworks   = "Security", 

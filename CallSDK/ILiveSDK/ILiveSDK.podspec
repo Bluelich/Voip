@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Bluelich" => "bluelich@qq.com" }
   spec.platform     = :ios, "8.0"
   spec.requires_arc = true
-  spec.source       = { :git => "", :tag => spec.version.to_s }
+  spec.source       = { :path => "./Sources"}
   spec.ios.vendored_frameworks = 'Sources/*.framework'
   spec.resource     = "Sources/*.bundle"
   spec.frameworks   = "Security", 
