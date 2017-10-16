@@ -8,14 +8,17 @@
 
 #import "Benchmark.h"
 
-extern uint64_t  dispatch_benchmark(size_t count, void (^block)(void));
+#ifdef DEBUG
+    extern uint64_t  dispatch_benchmark(size_t count, dispatch_block_t block);
+#endif
 
 @implementation Benchmark
 +(void)benchmarkWithTaskName:(NSString *)taskName
                 executeCount:(NSInteger)executeCount
-                        task:(void (^)(void))task
+                        task:(dispatch_block_t)task
                   completion:(void (^)(NSString * _Nullable taskName, uint64_t nanoseconds))completion
 {
+#ifdef DEBUG
     if (!task) {
         !completion ?: completion(taskName,0);
         return;
@@ -30,5 +33,6 @@ extern uint64_t  dispatch_benchmark(size_t count, void (^block)(void));
         return;
     }
     completion(taskName,avgRunTime);
+#endif
 }
 @end

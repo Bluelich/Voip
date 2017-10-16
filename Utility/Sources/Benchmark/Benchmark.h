@@ -19,6 +19,6 @@
  */
 +(void)benchmarkWithTaskName:(NSString *)taskName
                 executeCount:(NSInteger)executeCount
-                        task:(void (^)(void))task
+                        task:(dispatch_block_t)task
                   completion:(void (^)(NSString *taskName, uint64_t nanoseconds))completion;
 @end

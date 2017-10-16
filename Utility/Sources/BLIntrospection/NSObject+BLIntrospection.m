@@ -10,16 +10,15 @@
 #import <objc/runtime.h>
 
 #pragma mark - NSString
-@interface NSString (BLIntrospection)
-
-+ (NSString *)decodeType:(const char *)cString;
-
-@end
-
+//@interface NSString (BLIntrospection)
+//
+//+ (NSString *)decodeType:(const char *)cString;
+//
+//@end
 @implementation NSString (BLIntrospection)
-
-//https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
-+ (NSString *)decodeType:(const char *)cString {
++ (NSString *)decodeType:(const char *)cString
+{
+    //https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
     if (!strcmp(cString, @encode(id))) return @"id";
     if (!strcmp(cString, @encode(void))) return @"void";
     if (!strcmp(cString, @encode(float))) return @"float";
@@ -30,25 +29,21 @@
     if (!strcmp(cString, @encode(Class))) return @"class";
     if (!strcmp(cString, @encode(SEL))) return @"SEL";
     if (!strcmp(cString, @encode(unsigned int))) return @"unsigned int";
-    
     //@TODO: do handle bitmasks
     NSString *result = [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];
     if ([[result substringToIndex:1] isEqualToString:@"@"] && [result rangeOfString:@"?"].location == NSNotFound) {
         result = [[result substringWithRange:NSMakeRange(2, result.length - 3)] stringByAppendingString:@"*"];
-    } else
-        if ([[result substringToIndex:1] isEqualToString:@"^"]) {
-            result = [NSString stringWithFormat:@"%@ *",
-                      [NSString decodeType:[[result substringFromIndex:1] cStringUsingEncoding:NSUTF8StringEncoding]]];
-        }
+    } else if ([[result substringToIndex:1] isEqualToString:@"^"]) {
+        result = [NSString stringWithFormat:@"%@ *",[NSString decodeType:[[result substringFromIndex:1] cStringUsingEncoding:NSUTF8StringEncoding]]];
+    }
     return result;
 }
-
 @end
-
 #pragma mark - NSObject
 @implementation NSObject (BLIntrospection)
 #pragma mark - Class Methods
-+ (NSArray *)classes {
++ (NSArray *)classes
+{
     unsigned int classesCount;
     Class *classes = objc_copyClassList(&classesCount);
     NSMutableArray *result = [NSMutableArray array];
@@ -57,29 +52,29 @@
     }
     return [result sortedArrayUsingSelector:@selector(compare:)];
 }
-
-+ (NSArray *)classMethods {
++ (NSArray *)classMethods
+{
     return [self methodsForClass:object_getClass([self class]) typeFormat:@"+"];
 }
-
-+ (NSArray *)instanceMethods {
++ (NSArray *)instanceMethods
+{
     return [self methodsForClass:[self class] typeFormat:@"-"];
 }
-
-+ (NSArray *)properties {
++ (NSArray *)properties
+{
     unsigned int outCount;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+    objc_property_t *properties = class_copyPropertyList(self, &outCount);
     NSMutableArray *result = [NSMutableArray array];
     for (unsigned int i = 0; i < outCount; i++) {
         [result addObject:[self formattedPropery:properties[i]]];
     }
     free(properties);
-    return result.count ? [result copy] : nil;
+    return result.count ? result.copy : nil;
 }
-
-+ (NSArray *)instanceVariables {
++ (NSArray *)instanceVariables
+{
     unsigned int outCount;
-    Ivar *ivars = class_copyIvarList([self class], &outCount);
+    Ivar *ivars = class_copyIvarList(self, &outCount);
     NSMutableArray *result = [NSMutableArray array];
     for (unsigned int i = 0; i < outCount; i++) {
         NSString *type = [NSString decodeType:ivar_getTypeEncoding(ivars[i])];
@@ -90,11 +85,10 @@
     free(ivars);
     return result.count ? [result copy] : nil;
 }
-
-+ (NSArray *)protocols {
++ (NSArray *)protocols
+{
     unsigned int outCount;
     Protocol * const *protocols = class_copyProtocolList([self class], &outCount);
-    
     NSMutableArray *result = [NSMutableArray array];
     for (unsigned int i = 0; i < outCount; i++) {
         unsigned int adoptedCount;
@@ -117,7 +111,8 @@
     return result.count ? [result copy] : nil;
 }
 
-+ (NSDictionary *)descriptionForProtocol:(Protocol *)proto {
++ (NSDictionary *)descriptionForProtocol:(Protocol *)proto
+{
     NSMutableDictionary *methodsAndProperties = [NSMutableDictionary dictionary];
     
     NSArray *requiredMethods = [[[self class] formattedMethodsForProtocol:proto required:YES instance:NO] arrayByAddingObjectsFromArray:[[self class]formattedMethodsForProtocol:proto required:YES instance:YES]];
@@ -238,5 +233,21 @@
      [NSString decodeType:[[attributes objectForKey:@"T"] cStringUsingEncoding:NSUTF8StringEncoding]],
      [NSString stringWithCString:property_getName(prop) encoding:NSUTF8StringEncoding]];
     return [property copy];
+}
+- (NSData *)JSONData
+{
+    return nil;
+}
+- (id)JSONObject
+{
+    return nil;
+}
+- (NSString *)JSONString
+{
+    return nil;
+}
+- (NSString *)description_pretty
+{
+    return nil;
 }
 @end
