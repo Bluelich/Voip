@@ -1,37 +1,41 @@
 PODS:
   - AVSDK (1.9.5.925)
-  - GoogleWebRTC (1.1.19878)
+  - GoogleWebRTC (1.1.20266)
+  - GoogleWebRTC_Helper (1.0)
   - ILiveSDK (1.6.1.11681)
   - IMSDK (2.5.6.11082.11081)
-  - JCore (1.1.5)
-  - JPush (3.0.6):
-    - JCore (~> 1.1.1)
+  - JCore (1.1.6)
+  - JPush (3.0.7):
+    - JCore (~> 1.1.6)
   - NWPusher (0.7.5)
   - QAVEffect (1.0.0)
   - SDKVersion (0.0.1):
     - YYModel
+  - SocketRocket (0.5.1)
   - TILCallSDK (1.0.14.11684)
   - Utility (0.0.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AVSDK (from `./CallSDK/AVSDK/`)
-  - GoogleWebRTC (from `./GoogleWebRTC`)
+  - GoogleWebRTC
+  - GoogleWebRTC_Helper (from `./GoogleWebRTC/Helper`)
   - ILiveSDK (from `./CallSDK/ILiveSDK/`)
   - IMSDK (from `./CallSDK/IMSDK/`)
-  - JPush (~> 3.0.6)
-  - NWPusher (~> 0.7.0)
+  - JPush
+  - NWPusher
   - QAVEffect (from `./CallSDK/QAVEffect/`)
   - SDKVersion (from `./SDKVersion`)
+  - SocketRocket
   - TILCallSDK (from `./CallSDK/TILCallSDK/`)
   - Utility (from `./Utility`)
-  - YYModel (~> 1.0.4)
+  - YYModel
 
 EXTERNAL SOURCES:
   AVSDK:
     :path: ./CallSDK/AVSDK/
-  GoogleWebRTC:
-    :path: ./GoogleWebRTC
+  GoogleWebRTC_Helper:
+    :path: ./GoogleWebRTC/Helper
   ILiveSDK:
     :path: ./CallSDK/ILiveSDK/
   IMSDK:
@@ -47,18 +51,20 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AVSDK: b74670cdd950c7e6333c7e07852ceb58ddf845fa
-  GoogleWebRTC: da8a993e6140bd9bd373a1f05109440908f7dfe4
+  GoogleWebRTC: 2aca9ba329a68e466293b46ff1e9229de5bf42b4
+  GoogleWebRTC_Helper: 423c1d0f8c35e456faac26de2f53229d86db7d38
   ILiveSDK: d52029edd76f0a3d60805e9700010c1699bf8ada
   IMSDK: 970e61e4452e61e169a821eabe8ba1273d1c30e9
-  JCore: 9bd9c770c877c583d98b90a68792b8361974c231
-  JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
+  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
   NWPusher: 9b29a44754d88cb02c28a1e9bc8750845506123e
   QAVEffect: af086e2f6dcd3e0948a51df4fb7b0861ff6b737f
   SDKVersion: a85ecf5a5da5c420e84afe0491b229a9e8055727
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   TILCallSDK: 2578e80584a7d2e06a0e42370b95583697296dec
   Utility: d050578673fcc8ccc549c2c8238e3f4c5e4db8f8
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: bdb981b43fbf6b7c61151f68505e14c07ed4ce54
+PODFILE CHECKSUM: cbb7fad8483aaed1236be399961083ba113f1ebf
 
 COCOAPODS: 1.3.1

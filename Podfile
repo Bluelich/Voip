@@ -7,17 +7,19 @@ target 'Voip' do
   # use_frameworks!
 
   # Pods for Voip
-  pod 'Utility',        :path => './Utility'
-  pod 'SDKVersion',     :path => './SDKVersion'
-  pod 'AVSDK',          :path => './CallSDK/AVSDK/'
-  pod 'ILiveSDK',       :path => './CallSDK/ILiveSDK/'
-  pod 'IMSDK',          :path => './CallSDK/IMSDK/'
-  pod 'QAVEffect',      :path => './CallSDK/QAVEffect/'
-  pod 'TILCallSDK',     :path => './CallSDK/TILCallSDK/'
-  pod 'GoogleWebRTC',   :path => './GoogleWebRTC'
-  pod 'JPush',          '~> 3.0.6'
-  pod 'NWPusher',       '~> 0.7.0'
-  pod 'YYModel',        '~> 1.0.4'
+  pod 'Utility',             :path => './Utility'
+  pod 'SDKVersion',          :path => './SDKVersion'
+  pod 'AVSDK',               :path => './CallSDK/AVSDK/'
+  pod 'ILiveSDK',            :path => './CallSDK/ILiveSDK/'
+  pod 'IMSDK',               :path => './CallSDK/IMSDK/'
+  pod 'QAVEffect',           :path => './CallSDK/QAVEffect/'
+  pod 'TILCallSDK',          :path => './CallSDK/TILCallSDK/'
+  pod 'GoogleWebRTC_Helper', :path => './GoogleWebRTC/Helper'
+  pod 'GoogleWebRTC'    #:path => './GoogleWebRTC'
+  pod 'SocketRocket'
+  pod 'JPush'
+  pod 'NWPusher'
+  pod 'YYModel'
   target 'VoipTests' do
     inherit! :search_paths
     # Pods for testing

@@ -21,6 +21,9 @@
 		B421BDE21F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */; };
 		B421BDE31F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */; };
 		B421BDE41F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */; };
+		B46AF8DE1F9F02D00081EF54 /* WebRTCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B46AF8DD1F9F02D00081EF54 /* WebRTCHelper.m */; };
+		B46AF8DF1F9F02D00081EF54 /* WebRTCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B46AF8DD1F9F02D00081EF54 /* WebRTCHelper.m */; };
+		B46AF8E01F9F02D00081EF54 /* WebRTCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B46AF8DD1F9F02D00081EF54 /* WebRTCHelper.m */; };
 		B474E4121F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */; };
 		B474E4131F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */; };
 		B474E4141F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */; };
@@ -112,6 +115,8 @@
 		B421BDD91F667F74009FE2B6 /* AppDelegate+JPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JPush.m"; sourceTree = "<group>"; };
 		B421BDE01F668CFD009FE2B6 /* AppDelegate+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Notification.h"; sourceTree = "<group>"; };
 		B421BDE11F668CFD009FE2B6 /* AppDelegate+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Notification.m"; sourceTree = "<group>"; };
+		B46AF8DC1F9F02D00081EF54 /* WebRTCHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebRTCHelper.h; sourceTree = "<group>"; };
+		B46AF8DD1F9F02D00081EF54 /* WebRTCHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebRTCHelper.m; sourceTree = "<group>"; };
 		B474E4101F5E705D00300490 /* AppDelegate+NWPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+NWPusher.h"; sourceTree = "<group>"; };
 		B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+NWPusher.m"; sourceTree = "<group>"; };
 		B48555581F5CFE2C0068F4C6 /* Voip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +209,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B46AF8DB1F9F02C50081EF54 /* WebRTC */ = {
+			isa = PBXGroup;
+			children = (
+				B46AF8DC1F9F02D00081EF54 /* WebRTCHelper.h */,
+				B46AF8DD1F9F02D00081EF54 /* WebRTCHelper.m */,
+			);
+			path = WebRTC;
+			sourceTree = "<group>";
+		};
 		B485554F1F5CFE2C0068F4C6 = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +263,7 @@
 				B485556C1F5CFE2C0068F4C6 /* LaunchScreen.storyboard */,
 				B485556F1F5CFE2C0068F4C6 /* Info.plist */,
 				B48555671F5CFE2C0068F4C6 /* Voip.xcdatamodeld */,
+				B46AF8DB1F9F02C50081EF54 /* WebRTC */,
 				B49AC9D61F5FDD0E006E3199 /* Image */,
 				B49AC9D91F5FDD0E006E3199 /* Sound */,
 				B48555CE1F5D13750068F4C6 /* Call */,
@@ -669,9 +684,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Voip/Pods-Voip-frameworks.sh",
+				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -696,6 +714,7 @@
 				B48556001F5D13750068F4C6 /* CallMultiRecvViewController.m in Sources */,
 				B49AC9CB1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m in Sources */,
 				B421BDE21F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */,
+				B46AF8DE1F9F02D00081EF54 /* WebRTCHelper.m in Sources */,
 				B474E4121F5E705D00300490 /* AppDelegate+NWPusher.m in Sources */,
 				B49AC9E61F5FE28C006E3199 /* AppDelegate+NotificationCenter.m in Sources */,
 				B48555FD1F5D13750068F4C6 /* CallMultiMakeViewController.m in Sources */,
@@ -720,6 +739,7 @@
 				B49AC9C71F5FD0A0006E3199 /* AppDelegate+PushKit.m in Sources */,
 				B48555EC1F5D13750068F4C6 /* CallC2CRecvViewController.m in Sources */,
 				B48555F51F5D13750068F4C6 /* CallRegisterViewController.m in Sources */,
+				B46AF8DF1F9F02D00081EF54 /* WebRTCHelper.m in Sources */,
 				B48555791F5CFE2C0068F4C6 /* VoipTests.m in Sources */,
 				B48555F21F5D13750068F4C6 /* CallLoginViewController.m in Sources */,
 				B421BDE31F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */,
@@ -743,6 +763,7 @@
 				B49AC9C81F5FD0A0006E3199 /* AppDelegate+PushKit.m in Sources */,
 				B48555ED1F5D13750068F4C6 /* CallC2CRecvViewController.m in Sources */,
 				B48555F61F5D13750068F4C6 /* CallRegisterViewController.m in Sources */,
+				B46AF8E01F9F02D00081EF54 /* WebRTCHelper.m in Sources */,
 				B48555841F5CFE2D0068F4C6 /* VoipUITests.m in Sources */,
 				B48555F31F5D13750068F4C6 /* CallLoginViewController.m in Sources */,
 				B421BDE41F668CFD009FE2B6 /* AppDelegate+Notification.m in Sources */,

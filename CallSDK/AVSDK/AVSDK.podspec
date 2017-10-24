@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
                    DESC
   spec.homepage     = "http://www.bluelich.com"
   spec.license      = "MIT"
-  spec.author             = { "Bluelich" => "bluelich@qq.com" }
+  spec.author       = { "Bluelich" => "bluelich@qq.com" }
   spec.platform     = :ios, "8.0"
   spec.requires_arc = true
   spec.source       = { :path => "./Sources" }
