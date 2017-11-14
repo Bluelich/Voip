@@ -9,15 +9,7 @@
 #import "NSObject+BLIntrospection.h"
 #import <objc/runtime.h>
 
-#pragma mark - NSString
-//@interface NSString (BLIntrospection)
-//
-//+ (NSString *)decodeType:(const char *)cString;
-//
-//@end
-@implementation NSString (BLIntrospection)
-+ (NSString *)decodeType:(const char *)cString
-{
+NSString *decodeTypeFromCsString(const char *cString){
     //https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
     if (!strcmp(cString, @encode(id))) return @"id";
     if (!strcmp(cString, @encode(void))) return @"void";
@@ -34,11 +26,11 @@
     if ([[result substringToIndex:1] isEqualToString:@"@"] && [result rangeOfString:@"?"].location == NSNotFound) {
         result = [[result substringWithRange:NSMakeRange(2, result.length - 3)] stringByAppendingString:@"*"];
     } else if ([[result substringToIndex:1] isEqualToString:@"^"]) {
-        result = [NSString stringWithFormat:@"%@ *",[NSString decodeType:[[result substringFromIndex:1] cStringUsingEncoding:NSUTF8StringEncoding]]];
+        const char *decodeType = [[result substringFromIndex:1] cStringUsingEncoding:NSUTF8StringEncoding];
+        result = [NSString stringWithFormat:@"%@ *",decodeTypeFromCsString(cString)];
     }
     return result;
 }
-@end
 #pragma mark - NSObject
 @implementation NSObject (BLIntrospection)
 #pragma mark - Class Methods
@@ -77,7 +69,7 @@
     Ivar *ivars = class_copyIvarList(self, &outCount);
     NSMutableArray *result = [NSMutableArray array];
     for (unsigned int i = 0; i < outCount; i++) {
-        NSString *type = [NSString decodeType:ivar_getTypeEncoding(ivars[i])];
+        NSString *type = decodeTypeFromCsString(ivar_getTypeEncoding(ivars[i]));
         NSString *name = [NSString stringWithCString:ivar_getName(ivars[i]) encoding:NSUTF8StringEncoding];
         NSString *ivarDescription = [NSString stringWithFormat:@"%@ %@", type, name];
         [result addObject:ivarDescription];
@@ -158,7 +150,7 @@
     for (unsigned int i = 0; i < outCount; i++) {
         NSString *methodDescription = [NSString stringWithFormat:@"%@ (%@)%@",
                                        type,
-                                       [NSString decodeType:method_copyReturnType(methods[i])],
+                                       decodeTypeFromCsString(method_copyReturnType(methods[i])),
                                        NSStringFromSelector(method_getName(methods[i]))];
         
         NSInteger args = method_getNumberOfArguments(methods[i]);
@@ -166,7 +158,7 @@
         int offset = 2; //1-st arg is object (@), 2-nd is SEL (:)
         
         for (int idx = offset; idx < args; idx++) {
-            NSString *returnType = [NSString decodeType:method_copyArgumentType(methods[i], idx)];
+            NSString *returnType = decodeTypeFromCsString(method_copyArgumentType(methods[i], idx));
             selParts[idx - offset] = [NSString stringWithFormat:@"%@:(%@)arg%d",
                                       selParts[idx - offset],
                                       returnType,
@@ -230,7 +222,7 @@
     
     [property appendFormat:@"(%@) %@ %@",
      [attrsArray componentsJoinedByString:@", "],
-     [NSString decodeType:[[attributes objectForKey:@"T"] cStringUsingEncoding:NSUTF8StringEncoding]],
+     decodeTypeFromCsString([[attributes objectForKey:@"T"] cStringUsingEncoding:NSUTF8StringEncoding]),
      [NSString stringWithCString:property_getName(prop) encoding:NSUTF8StringEncoding]];
     return [property copy];
 }
