@@ -19,51 +19,15 @@ NSString     *kNotificationTimerExpiredCategoryIdentifier   = @"TIMER_EXPIRED";
 NSDictionary *NSDictionaryFromNotificationSettings(UNNotificationSettings *settings);
 
 @interface PushCenter : NSObject
-
 + (void)jpushRegistrationWithLaunchOptions:(NSDictionary *)launchOptions;
 + (void)jpushRegisterDeviceToken:(NSData *)token;
 + (void)jpushHandleRemoteNotification:(NSDictionary *)remoteInfo;
-
 @end
 
-@implementation PushCenter
-#pragma mark - JPush
-+ (void)jpushRegistrationWithLaunchOptions:(NSDictionary *)launchOptions
-{
-    [JPUSHService setLogOFF];
-    [JPUSHService setupWithOption:launchOptions
-                           appKey:kJPUSHKey
-                          channel:kJPUSHChannel
-                 apsForProduction:NO
-            advertisingIdentifier:ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString];
-    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
-        NSMutableString *text = [NSMutableString string];
-        if (resCode == 1011 && registrationID == nil) {
-            [text appendString:@"模拟器"];
-        }
-        [text appendFormat:@"resCpde:%d registrationID:%@",resCode,registrationID];
-        NSLog(@"%@",text);
-    }];
-}
-+ (void)jpushRegisterDeviceToken:(NSData *)deviceToken
-{
-    NSString *tokenDescription = [NSString stringWithFormat:@"\nDeviceToken:%@",deviceToken.hexString];
-    if ([UIPasteboard generalPasteboard].string.length > 0) {
-        [UIPasteboard generalPasteboard].string = [[UIPasteboard generalPasteboard].string stringByAppendingString:@"\n"];
-    }
-    [UIPasteboard generalPasteboard].string = [[UIPasteboard generalPasteboard].string stringByAppendingFormat:@"%@",tokenDescription];
-    [JPUSHService registerDeviceToken:deviceToken];
-}
-+ (void)jpushHandleRemoteNotification:(NSDictionary *)remoteInfo
-{
-    [JPUSHService handleRemoteNotification:remoteInfo];
-}
-@end
-
+#pragma mark - 
 @interface NotificationCenter ()<UNUserNotificationCenterDelegate,PKPushRegistryDelegate>
 @property(class,nonatomic,strong,readonly)NotificationCenter *shared;
 @end
-
 @implementation NotificationCenter
 + (void)notificationRegistrationWithLaunchOptions:(NSDictionary *)launchOptions
 {
@@ -272,6 +236,41 @@ NSDictionary *NSDictionaryFromNotificationSettings(UNNotificationSettings *setti
         instance = [self new];
     });
     return instance;
+}
+@end
+
+@implementation PushCenter
+#pragma mark - JPush
++ (void)jpushRegistrationWithLaunchOptions:(NSDictionary *)launchOptions
+{
+    [JPUSHService setLogOFF];
+    [JPUSHService setupWithOption:launchOptions
+                           appKey:kJPUSHKey
+                          channel:kJPUSHChannel
+                 apsForProduction:NO
+            advertisingIdentifier:ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString];
+    [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
+        NSMutableString *text = [NSMutableString string];
+        if (resCode == 1011 && registrationID == nil) {
+            [text appendString:@"模拟器"];
+        }
+        [text appendFormat:@"resCpde:%d registrationID:%@",resCode,registrationID];
+        NSLog(@"%@",text);
+    }];
+    NSLog(@"JPush registrationID:%@",JPUSHService.registrationID);
+}
++ (void)jpushRegisterDeviceToken:(NSData *)deviceToken
+{
+    NSString *tokenDescription = [NSString stringWithFormat:@"\nDeviceToken:%@",deviceToken.hexString];
+    if ([UIPasteboard generalPasteboard].string.length > 0) {
+        [UIPasteboard generalPasteboard].string = [[UIPasteboard generalPasteboard].string stringByAppendingString:@"\n"];
+    }
+    [UIPasteboard generalPasteboard].string = [[UIPasteboard generalPasteboard].string stringByAppendingFormat:@"%@",tokenDescription];
+    [JPUSHService registerDeviceToken:deviceToken];
+}
++ (void)jpushHandleRemoteNotification:(NSDictionary *)remoteInfo
+{
+    [JPUSHService handleRemoteNotification:remoteInfo];
 }
 @end
 

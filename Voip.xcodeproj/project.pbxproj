@@ -138,7 +138,6 @@
 		B48555E41F5D13750068F4C6 /* CallMultiRecvViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallMultiRecvViewController.m; sourceTree = "<group>"; };
 		B48556191F5D29720068F4C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B485561B1F5D29720068F4C6 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
-		B49AC9C91F5FD4AD006E3199 /* AppDelegate+RemoteNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+RemoteNotification.h"; sourceTree = "<group>"; };
 		B49AC9CA1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+RemoteNotification.m"; sourceTree = "<group>"; };
 		B49AC9D71F5FDD0E006E3199 /* icon_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_test.png; sourceTree = "<group>"; };
 		B49AC9D81F5FDD0E006E3199 /* image_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_test.jpg; sourceTree = "<group>"; };
@@ -217,12 +216,11 @@
 				B48555911F5CFEC40068F4C6 /* Voip.entitlements */,
 				B485555E1F5CFE2C0068F4C6 /* AppDelegate.h */,
 				B485555F1F5CFE2C0068F4C6 /* AppDelegate.m */,
-				B474E4101F5E705D00300490 /* AppDelegate+NWPusher.h */,
-				B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */,
-				B49AC9C91F5FD4AD006E3199 /* AppDelegate+RemoteNotification.h */,
-				B49AC9CA1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m */,
 				2A5DC3231FC328F30075D878 /* NotificationCenter.h */,
 				2A5DC3241FC328F30075D878 /* NotificationCenter.m */,
+				B474E4101F5E705D00300490 /* AppDelegate+NWPusher.h */,
+				B474E4111F5E705D00300490 /* AppDelegate+NWPusher.m */,
+				B49AC9CA1F5FD4AD006E3199 /* AppDelegate+RemoteNotification.m */,
 				B485556A1F5CFE2C0068F4C6 /* Assets.xcassets */,
 				B4DED8BD1F66A03D0038827D /* Login.storyboard */,
 				B485556C1F5CFE2C0068F4C6 /* LaunchScreen.storyboard */,

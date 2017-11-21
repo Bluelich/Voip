@@ -6,7 +6,7 @@
 //  Copyright © 2017 zhouqiang. All rights reserved.
 //
 
-#import "AppDelegate+RemoteNotification.h"
+#import "AppDelegate.h"
 #import "NotificationCenter.h"
 
 @implementation AppDelegate (RemoteNotification)
