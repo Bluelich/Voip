@@ -12,6 +12,6 @@
 #import "Constant.h"
 #import "NSData+Utility.h"
 #import "NSObject+BLIntrospection.h"
-#import "UIAlertController+Art.h"
+#import "UIAlertController+Bluelich.h"
 
 #endif /* Utility_h */

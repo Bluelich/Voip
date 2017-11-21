@@ -1,5 +1,5 @@
 //
-//  UIAlertController+Art.h
+//  UIAlertController+Bluelich.h
 //  ArtChat
 //
 //  Created by zhouqiang on 17/04/2017.
@@ -15,7 +15,7 @@ __attribute__((deprecated("This method has been deprecated and will be removed i
 __attribute__((deprecated("This method has been deprecated and will be removed in " since_version ". Please use `" METHOD "` instead.")))
 #define BL_Deprecated(msg) __attribute((deprecated(msg)))
 
-@interface UIAlertController (Art)
+@interface UIAlertController (Bluelich)
 +(void)showAlertWithTitle:(nullable NSString *)title
                   message:(nullable NSString *)message
         cancelButtonTitle:(nullable NSString *)cancelButtonTitle;

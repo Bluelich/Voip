@@ -9,6 +9,7 @@
 #import "AppDelegate+NWPusher.h"
 #import <NWPusher/NWPusher.h>
 #import <NWPusher/NWPushFeedback.h>
+#import <YYModel/YYModel.h>
 
 @interface AppDelegate (__NWPusher__)
 
@@ -32,12 +33,16 @@
     }
 }
 //When pusher is successfully connected, send a payload to your device
-- (void)push
+- (void)pushWithToken:(NSString *)token payload:(NSDictionary *)payload
 {
-    NSString *payload = @"{\"aps\":{\"alert\":\"Testing..\"}}";
-    NSString *token = @"0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
+    if (!payload) {
+        payload = @{@"aps":@{
+                            @"alert":@"Testing..."
+                            }
+                    };
+    }
     NSError *error = nil;
-    if ([self.pusher pushPayload:payload token:token identifier:rand() error:&error]) {
+    if ([self.pusher pushPayload:payload.yy_modelToJSONString token:token identifier:rand() error:&error]) {
         NSLog(@"Pushed to APNs");
     } else {
         NSLog(@"Unable to push: %@", error);

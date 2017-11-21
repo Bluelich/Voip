@@ -10,6 +10,4 @@
 
 @interface AppDelegate (RemoteNotification)
 
-- (void)handleRemoteNotification:(NSDictionary *)remoteInfo;
-
 @end

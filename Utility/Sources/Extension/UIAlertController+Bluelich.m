@@ -1,14 +1,14 @@
 //
-//  UIAlertController+Art.m
+//  UIAlertController+Bluelich.m
 //  ArtChat
 //
 //  Created by zhouqiang on 17/04/2017.
 //
 //
 
-#import "UIAlertController+Art.h"
+#import "UIAlertController+Bluelich.h"
 
-@implementation UIAlertController (Art)
+@implementation UIAlertController (Bluelich)
 +(void)showAlertWithTitle:(NSString *)title
                   message:(NSString *)message
         cancelButtonTitle:(NSString *)cancelButtonTitle

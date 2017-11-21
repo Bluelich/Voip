@@ -7,11 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "AppDelegate+PushKit.h"
-#import "AppDelegate+Notification.h"
+#import "NotificationCenter.h"
+#import "CallLoginViewController.h"
 
-#import <Utility/Constant.h>
-#import <Utility/UIAlertController+Art.h>
+#import <Utility/Utility.h>
 #import <AdSupport/AdSupport.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UserNotifications/UserNotifications.h>
@@ -21,8 +20,7 @@
 #import <ILiveSDK/ILiveSDK.h>
 #import <TILCallSDK/TILCallSDK.h>
 #import <ILiveSDK/ILiveLoginManager.h>
-#import "CallLoginViewController.h"
-#import "SDKVersionWindow.h"
+#import <SDKVersion/SDKVersionWindow.h>
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface AppDelegate ()<NSURLSessionDelegate>
@@ -42,9 +40,9 @@
     BOOL background = application.applicationState == UIApplicationStateBackground;
     NSLog(@"background:%@",background ? @"YES" : @"NO");
     //注册通知
-    [self notificationRegistrationWithLaunchOptions:launchOptions];
+    [NotificationCenter notificationRegistrationWithLaunchOptions:launchOptions];
     //注册Voip
-    [self voipRegistration];
+    [NotificationCenter voipRegistration];
     //登录账户
     [self callLogin];
 //    [MPRemoteCommandCenter.sharedCommandCenter.playCommand addTarget:self action:NSSelectorFromString(@"sel")];
@@ -146,8 +144,7 @@ expectedTotalBytes:(int64_t)expectedTotalBytes
     [task resume];
 }
 #pragma mark - 后台的任务完成后如果应用没有在前台运行，需要实现UIApplication的delegate让系统唤醒应用
-- (void) application:(UIApplication *)application
-handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler
 {
     // 你必须重新建立一个后台 seesiong 的参照
     // 否则 NSURLSessionDownloadDelegate 和 NSURLSessionDelegate 方法会因为
