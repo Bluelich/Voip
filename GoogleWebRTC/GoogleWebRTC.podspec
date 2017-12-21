@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "GoogleWebRTC"
-  spec.version      = "1.1.20266"
+  spec.version      = "1.1.20725"
   spec.summary      = "WebRTC iOS SDK"
   spec.description  = <<-DESC
                     WebRTC is a free, open project that provides browsers and mobile applications with Real-Time Communications (RTC) capabilities via simple APIs.
@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.requires_arc = true
   spec.preserve_paths = [ "LICENSE.md","README.md" ]
-  spec.source       = { :http => 'https://dl.google.com/dl/cpdc/10797d3d24433975/GoogleWebRTC-1.1.20266.tar.gz' }
+  spec.source       = { :http => 'https://dl.google.com/dl/cpdc/178c88dec70c3954/GoogleWebRTC-1.1.20725.tar.gz' }
   spec.ios.vendored_frameworks = "Frameworks/frameworks/WebRTC.framework"
   spec.frameworks   = "Security", 
 					            "CFNetwork",

@@ -2,8 +2,8 @@
 //  AppDelegate+NWPusher.m
 //  Voip
 //
-//  Created by zhouqiang on 05/09/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Created by Bluelich on 05/09/2017.
+//  Copyright © 2017 Bluelich. All rights reserved.
 //
 
 #import "AppDelegate+NWPusher.h"

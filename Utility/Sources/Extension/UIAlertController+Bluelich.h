@@ -2,7 +2,7 @@
 //  UIAlertController+Bluelich.h
 //  ArtChat
 //
-//  Created by zhouqiang on 17/04/2017.
+//  Created by Bluelich on 17/04/2017.
 //
 //
 

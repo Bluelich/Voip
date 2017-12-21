@@ -2,7 +2,7 @@
 //  NSObject+TypeEncodings.m
 //  Pods
 //
-//  Created by zhouqiang on 16/10/2017.
+//  Created by Bluelich on 16/10/2017.
 //
 
 #import "NSObject+TypeEncodings.h"

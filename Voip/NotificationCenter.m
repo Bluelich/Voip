@@ -3,7 +3,7 @@
 //  Voip
 //
 //  Created by Bluelich on 20/11/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Copyright © 2017 Bluelich. All rights reserved.
 //
 
 #import "NotificationCenter.h"
@@ -38,6 +38,7 @@ NSDictionary *NSDictionaryFromNotificationSettings(UNNotificationSettings *setti
             return;
         }
         [self.shared configNotificationCategories];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
     }];
     //注册极光
     [PushCenter jpushRegistrationWithLaunchOptions:launchOptions];

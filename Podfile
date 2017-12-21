@@ -14,7 +14,7 @@ target 'Voip' do
   pod 'IMSDK',               :path => './CallSDK/IMSDK/'
   pod 'QAVEffect',           :path => './CallSDK/QAVEffect/'
   pod 'TILCallSDK',          :path => './CallSDK/TILCallSDK/'
-#  pod 'GoogleWebRTC_Helper', :path => './GoogleWebRTC/Helper'
+  pod 'GoogleWebRTC_Helper', :path => './GoogleWebRTC/Helper'
   pod 'GoogleWebRTC'       #,:path => './GoogleWebRTC'
   pod 'SocketRocket'
   pod 'JPush'

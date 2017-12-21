@@ -2,8 +2,8 @@
 //  Constant.h
 //  VoipTest
 //
-//  Created by zhouqiang on 29/08/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Created by Bluelich on 29/08/2017.
+//  Copyright © 2017 Bluelich. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

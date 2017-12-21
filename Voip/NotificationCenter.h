@@ -3,7 +3,7 @@
 //  Voip
 //
 //  Created by Bluelich on 20/11/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Copyright © 2017 Bluelich. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

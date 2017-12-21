@@ -2,7 +2,7 @@
 //  SDKVersionViewController.m
 //  Pods
 //
-//  Created by zhouqiang on 08/09/2017.
+//  Created by Bluelich on 08/09/2017.
 //
 //
 

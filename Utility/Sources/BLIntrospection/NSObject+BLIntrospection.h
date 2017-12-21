@@ -2,8 +2,8 @@
 //  NSObject+BLIntrospection.h
 //  Test
 //
-//  Created by zhouqiang on 25/07/2017.
-//  Copyright © 2017 zhouqiang. All rights reserved.
+//  Created by Bluelich on 25/07/2017.
+//  Copyright © 2017 Bluelich. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
